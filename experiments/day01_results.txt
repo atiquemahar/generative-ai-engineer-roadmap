@@ -1,0 +1,1 @@
+{'content': 'The “big three” public cloud providers are:\n- Amazon Web Services (AWS)\n- Microsoft Azure\n- Google Cloud Platform (GCP)', 'tokens_prompts': 24, 'tokens_completion': 167, 'tokens_total': 191, 'latency_seconds': 5.662}
