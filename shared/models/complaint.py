@@ -43,5 +43,11 @@ class Complaint(BaseModel):
                 return "low"
         return v    
 
+    @field_validator("intent", mode="before")
+    @classmethod
+    def normalize_intent(cls, v):
+        if isinstance(v, str):
+            return v.lower()
+        return v
 
         
