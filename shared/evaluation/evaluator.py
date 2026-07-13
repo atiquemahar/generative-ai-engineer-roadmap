@@ -24,6 +24,10 @@ class EvalResult:
     latency_ms: float
     pass_overall: bool
     error: Optional[str] = None
+    input_tokens: int = 0
+    output_tokens: int = 0
+    total_tokens: int = 0
+
 
 class ComplaintEvaluator:
     def __init__(self, extractor_fn: Callable):
@@ -50,10 +54,12 @@ class ComplaintEvaluator:
             error = None
             result = None
             schema_valid = False
+            token_usage = {}
 
             try:
                 result = self.extractor_fn(case["input"]) 
                 schema_valid = True
+                token_usage = getattr(self.extractor_fn, "last_token_usage", {})
 
             except Exception as e:
                 error = str(e)
@@ -79,10 +85,13 @@ class ComplaintEvaluator:
                 correct_priority=result.priority == case["expected_priority"] if result else False,
                 correct_customer_id=result.customer_id == case.get("expected_customer_id") if result else False,
                 correct_order_id=result.order_id == case.get("expected_order_id") if result else False,
-                correct_missing_fields=sorted(result.missing_fields) == case.get("expected_missing_fields", []) if result else False,
+                correct_missing_fields=sorted(result.missing_fields) == sorted(case.get("expected_missing_fields", [])) if result else False,
                 latency_ms=round(latency,2),
                 pass_overall=False, # set below
-                error=error
+                error=error,
+                input_tokens=token_usage.get("input_tokens", 0),
+                output_tokens=token_usage.get("output_tokens", 0),
+                total_tokens=token_usage.get("total_tokens", 0)
 
             )
 
@@ -102,7 +111,9 @@ class ComplaintEvaluator:
         """Generate summary metrics from results."""
         total = len(self.results)  
         if total == 0:
-            return {}  
+            return {}
+          
+        total_tokens = sum(r.total_tokens for r in self.results)
 
         return {
             "total_cases": total,
@@ -113,6 +124,9 @@ class ComplaintEvaluator:
             "order_id_accuracy": sum(r.correct_order_id for r in self.results) / total,
             "overall_pass_rate": sum(r.pass_overall for r in self.results) / total,
             "avg_latency_ms": sum(r.latency_ms for r in self.results) / total,
+            "total_tokens_used": total_tokens,
+            "avg_tokens_per_call": round(total_tokens/total, 1),
+            "estimated_cost_usd": round(total_tokens * 0.000002, 4), #rough estimate
             "failures": [
                 {"input": r.input, "error": r.error or "field_mismatch"}
                 for r in self.results if not r.pass_overall

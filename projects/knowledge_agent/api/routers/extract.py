@@ -20,7 +20,10 @@ async def extract_complaint_data(
     try:
         # We extract the string from the payload, and pass both it and 
         # the injected client directly into our core extraction function.
-        result = extract_complaint(message=payload.text_to_analyze, project_client=client)
+        result, _ = extract_complaint(              # unpack — ignore tokens in API route
+            message=payload.text_to_analyze, 
+            project_client=client
+        ) 
         
         # FastAPI handles serializing this Complaint object back into JSON
         return result

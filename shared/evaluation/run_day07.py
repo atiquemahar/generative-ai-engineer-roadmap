@@ -12,6 +12,7 @@ if REPO_ROOT not in sys.path:
 
 from projects.knowledge_agent.services.extractor import extract_complaint
 from shared.evaluation.evaluator import ComplaintEvaluator
+from shared.models.complaint import Complaint
 
 load_dotenv()
 
@@ -26,10 +27,16 @@ if __name__ == "__main__":
         endpoint=os.environ["AZURE_PROJECT_ENDPOINT"],
         credential=DefaultAzureCredential()
     )   
-    bound_extractor = partial(extract_complaint, project_client=project_client) 
+    def extractor_with_token_tracking(message: str) -> Complaint:
+        """Unpacks tuple, stores token usage as function attribute."""
+        result, token_usage = extract_complaint(message, project_client=project_client)
+        extractor_with_token_tracking.last_token_usage = token_usage
+        return result
+
+    extractor_with_token_tracking.last_token_usage = {}
 
     # Run evaluation
-    evaluator = ComplaintEvaluator(extractor_fn=bound_extractor)
+    evaluator = ComplaintEvaluator(extractor_fn=extractor_with_token_tracking)
     evaluator.run(test_cases)
 
     # Print report
