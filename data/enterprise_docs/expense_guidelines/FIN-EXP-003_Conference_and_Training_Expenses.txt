@@ -1,0 +1,67 @@
+NOVATECH ENTERPRISES
+FINANCIAL POLICY — FIN-EXP-003
+CONFERENCE AND TRAINING EXPENSE GUIDELINES
+Effective Date: 1 January 2026 | Version: 2.0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. PURPOSE
+NovaTech invests in employee professional development. This policy outlines how
+conference attendance, external training, and professional development costs are
+approved and reimbursed.
+
+2. ANNUAL TRAINING BUDGET
+Each employee has an annual professional development budget:
+  - Individual Contributors:   USD 2,000 per year
+  - Senior / Lead employees:   USD 3,000 per year
+  - Managers:                  USD 4,000 per year
+  - Directors and above:       Approved case-by-case by CHRO
+
+Budget resets on 1 January. Unused budget does not carry over to the next year.
+
+3. ELIGIBLE EXPENSES
+The following are eligible within the annual budget:
+  - Conference registration fees (including virtual conferences)
+  - Online course platforms (Coursera, Pluralsight, LinkedIn Learning, Udemy for Business)
+  - Professional certification exam fees and preparation materials
+  - Technical books and study guides (up to USD 200 per year)
+  - Workshop and bootcamp fees
+
+4. APPROVAL PROCESS
+All training expenses above USD 500 require manager approval before purchase.
+Expenses above USD 1,500 require both manager and department head approval.
+Conference travel expenses (flights, hotel) are covered by the Travel Expense Policy
+(FIN-EXP-001) and do NOT count toward the training budget.
+
+5. CONFERENCES
+Employees may attend up to 2 external conferences per year within their budget.
+For conferences above USD 1,000 registration fee, the employee must agree to share
+learnings with their team via a written summary or presentation within 30 days
+of return.
+
+6. CERTIFICATION REIMBURSEMENT BONUS
+Upon passing an approved professional certification exam, NovaTech provides a
+one-time bonus above the training budget:
+  - Foundational certifications (e.g., AZ-900, AWS Cloud Practitioner):  USD 200
+  - Associate-level certifications (e.g., AZ-104, AWS Solutions Architect):  USD 500
+  - Expert/Professional certifications (e.g., AZ-305, CISSP):  USD 1,000
+
+Bonus is paid via payroll in the month after proof of certification is submitted to HR.
+
+7. REPAYMENT
+If an employee leaves NovaTech within 12 months of completing training costing over
+USD 1,000, a pro-rated repayment may be required:
+  - Depart within 6 months: 100% repayment
+  - Depart between 6–12 months: 50% repayment
+  - Depart after 12 months: No repayment
+
+This repayment obligation must be acknowledged in writing before approval of training
+costing over USD 1,000.
+
+8. SUBSCRIPTION SERVICES
+Team-level subscriptions (e.g., Pluralsight team plan) are purchased centrally by IT
+and do not count against individual budgets. Employees should check with IT before
+purchasing an individual subscription that may already be covered.
+
+Policy Owner: Chief People Officer
+Questions: learning@novatech.com | HR Helpdesk ext. 4400

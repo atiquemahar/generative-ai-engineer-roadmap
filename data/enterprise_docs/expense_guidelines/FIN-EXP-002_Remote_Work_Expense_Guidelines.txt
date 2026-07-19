@@ -1,0 +1,64 @@
+NOVATECH ENTERPRISES
+FINANCIAL POLICY — FIN-EXP-002
+REMOTE WORK EQUIPMENT AND EXPENSE GUIDELINES
+Effective Date: 1 March 2026 | Version: 1.4
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. OVERVIEW
+NovaTech supports a hybrid work model. This policy defines what equipment and home
+office expenses are reimbursable for employees working remotely for 3 or more days
+per week under an approved remote work arrangement.
+
+2. ELIGIBILITY
+Employees must have a signed Remote Work Agreement on file with HR before submitting
+remote work expenses. Temporary remote work arrangements (fewer than 30 consecutive
+days) are not eligible for equipment reimbursement.
+
+3. INITIAL SETUP ALLOWANCE
+Eligible remote workers receive a one-time home office setup allowance of USD 800.
+This covers any combination of the following:
+  - External monitor(s)
+  - Ergonomic keyboard and mouse
+  - Desk lamp
+  - Webcam (if not integrated into laptop)
+  - Headset for calls
+  - Desk or office chair (up to USD 400 of the total allowance)
+
+All items must be purchased within 90 days of approval and submitted via Concur.
+Receipts required. Items remain property of NovaTech and must be returned upon
+departure.
+
+4. INTERNET CONNECTIVITY
+A monthly internet stipend of USD 50 is provided to all approved remote workers.
+This is processed as a non-taxable reimbursement via payroll and does not require
+a monthly receipt submission. Employees on hybrid arrangements (fewer than 3 days
+remote per week) are not eligible for this stipend.
+
+5. ONGOING CONSUMABLES
+The following recurring items are reimbursable up to USD 20 per month with receipt:
+  - Printer paper and ink (where printing is a documented job requirement)
+  - USB cables and minor accessories
+
+Software subscriptions are NOT reimbursable as personal purchases; all software
+must be requisitioned through IT via IT-PROC-002.
+
+6. ANNUAL REFRESH
+Employees may request equipment replacement after 3 years of use or in the event of
+equipment failure. Replacement is subject to manager and Finance approval. Failed
+equipment must be reported to IT who will coordinate repair or replacement.
+
+7. COWORKING SPACES
+NovaTech maintains memberships at WeWork locations in 12 cities. Employees may use
+these at no personal cost by booking via the intranet. Ad-hoc coworking space costs
+are reimbursable up to USD 40 per day with a maximum of 8 days per month, subject
+to manager approval.
+
+8. EXCLUSIONS
+The following are not reimbursable: home office rent or mortgage contribution, utility
+bills (electricity, heating), personal mobile phone plans, standing desks (covered
+by the setup allowance if within budget), and any item purchased before remote work
+agreement approval.
+
+Policy Owner: VP Finance Operations
+Questions: remote-expenses@novatech.com
