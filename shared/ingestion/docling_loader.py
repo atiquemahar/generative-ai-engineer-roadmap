@@ -58,6 +58,7 @@ def load_document(path: str) -> list[Document]:
         ValueError:        unsupported extension
         ImportError:       langchain-docling not installed
     """
+
     try:
         from langchain_docling import DoclingLoader
     except ImportError:
@@ -66,7 +67,7 @@ def load_document(path: str) -> list[Document]:
             "Run: pip install langchain-docling docling"
        )
     file_path = Path(path)
-    if not file_path.exists:
+    if not file_path.exists():
         raise FileNotFoundError(f"file not found {path}")
     
     suffix = file_path.suffix.lower()
@@ -109,7 +110,7 @@ def load_directory(
         Flat list of Documents with a 'source' metadata key (full path).
     """
     root = Path(dir_path)
-    if not root.is_dir:
+    if not root.is_dir():
         raise NotADirectoryError(f"Not a directory: {dir_path}")
     
     allowed = set(extensions or SUPPORTED_EXTENSIONS)
