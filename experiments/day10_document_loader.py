@@ -1,5 +1,5 @@
 """
-experiments/day10_document_loaders.py
+experiments/day10_document_loader.py
 Day 10 — Test DoclingLoader against all 15 enterprise documents.
 
 Run from repo root:
@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from shared.ingestion.document_loader import load_document, load_directory
+from shared.ingestion.docling_loader import load_document, load_directory
 
 # Documents live here (relative to repo root):
 #   data/enterprise_docs/hr_policies/

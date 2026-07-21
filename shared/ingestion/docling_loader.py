@@ -1,5 +1,5 @@
 """
-shared/ingestion/loaders.py
+shared/ingestion/docling_loader.py
 Day 10 — Document Loaders (Docling — single loader for all formats)
  
 Docling natively handles every format used in this project:

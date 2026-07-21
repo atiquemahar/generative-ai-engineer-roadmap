@@ -1,0 +1,5 @@
+strategy,chunks,avg_chunk_size,questions_answered,accuracy
+fixed_500_no_overlap,95,382,8,8/9
+fixed_500_overlap_100,100,396,8,8/9
+small_200_overlap_50,268,141,8,8/9
+heading_aware_md,25,305,2,2/9
