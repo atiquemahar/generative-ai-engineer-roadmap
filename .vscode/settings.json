@@ -1,0 +1,4 @@
+{
+    "markdown.updateLinksOnFileMove.enableForDirectories": false,
+    "markdown.suggest.paths.enabled": false
+}

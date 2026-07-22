@@ -1,0 +1,262 @@
+[
+  {
+    "question": "What is the maximum expense claim without a receipt?",
+    "expected_source": "expense_guidelines",
+    "answer": "USD 25. Receipts are required for all individual expenses above USD 25. (Lost-receipt affidavits may be submitted for up to 2 claims per employee per year.)",
+    "sources": [
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "How many days of annual leave does a new employee get?",
+    "expected_source": "leave_policies",
+    "answer": "A new (0\u20132 years) permanent full-time employee is entitled to 20 days of annual leave per year. Leave is accrued monthly and begins from the first day of employment.",
+    "sources": [
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-002_Sick_Leave_Policy.md"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What VPN software is approved for remote access?",
+    "expected_source": "it_procedures",
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [
+      "IT-PROC-002_Software_Installation.docx",
+      "IT-PROC-002_Software_Installation.docx",
+      "IT-PROC-002_Software_Installation.docx"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": false
+  },
+  {
+    "question": "How much fee will the customer pay to the Vendor monthly?",
+    "expected_source": "vendor_contracts",
+    "answer": "The customer shall pay a monthly base fee of USD 48,000 (plus any variable consumption charges invoiced monthly in arrears).",
+    "sources": [
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-003_Professional_Services_Agreement.pdf",
+      "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "After how many days of invoice will payment be due?",
+    "expected_source": "vendor_contracts",
+    "answer": "- Under VEN-CON-003 (Professional Services Agreement): payment is due within 21 days of invoice.\n- Under VEN-CON-001 (Cloud Hosting MSA): payment is due within 30 days of invoice date.",
+    "sources": [
+      "VEN-CON-003_Professional_Services_Agreement.pdf",
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-003_Professional_Services_Agreement.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "How many days of Paid Sick Leave does an employee with 3 years experience get?",
+    "expected_source": "leave_policies",
+    "answer": "An employee with 3 years\u2019 experience is entitled to 15 days of paid sick leave per year (15 days at full pay).",
+    "sources": [
+      "HR-LEA-002_Sick_Leave_Policy.md",
+      "HR-LEA-003_Parental_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the code of conduct for Social Media and public Communication?",
+    "expected_source": "hr_policies",
+    "answer": "Employees must not post content that misrepresents NovaTech, discloses confidential information, or brings the company into disrepute. Personal opinions shared online must be clearly stated as such and not attributed to NovaTech. (This policy applies to all full-time, part-time, and contract staff globally.)",
+    "sources": [
+      "HR-POL-001_Code_of_Conduct.pdf",
+      "HR-POL-001_Code_of_Conduct.pdf",
+      "HR-POL-001_Code_of_Conduct.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the Shortlisting criteria?",
+    "expected_source": "hr_policies",
+    "answer": "Shortlisting must be:\n- Conducted by at least two people.\n- Done using a standardised scoring matrix provided by HR.\n- Performed with personal information (e.g., name, address, and age) anonymised during the initial screen.",
+    "sources": [
+      "HR-POL-002_Recruitment_and_Selection.pdf",
+      "HR-POL-002_Recruitment_and_Selection.pdf",
+      "HR-POL-002_Recruitment_and_Selection.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the Offer and Onboarding policy?",
+    "expected_source": "hr_policies",
+    "answer": "- Verbal offers must be followed by a written contract within 5 business days.\n- The onboarding programme spans 90 days and includes mandatory compliance training in weeks 1 and 4.",
+    "sources": [
+      "HR-POL-002_Recruitment_and_Selection.pdf",
+      "HR-POL-002_Recruitment_and_Selection.pdf",
+      "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "Within how many days must expenses be submitted after they are incurred?",
+    "expected_source": "expense_guidelines",
+    "answer": "Expenses must be submitted within 30 calendar days of the expense being incurred.",
+    "sources": [
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+      "VEN-CON-003_Professional_Services_Agreement.pdf",
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the personal car mileage reimbursement rate?",
+    "expected_source": "expense_guidelines",
+    "answer": "USD 0.67 per mile (2026 IRS rate).",
+    "sources": [
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the one-time home office setup allowance for remote workers?",
+    "expected_source": "expense_guidelines",
+    "answer": "The one-time home office setup allowance is USD 800. It may be used for the listed items (e.g., monitors, keyboard/mouse, lamp, webcam, headset, desk/chair \u2014 with desk or office chair limited to up to USD 400 of the allowance) and purchases must be made within 90 days with receipts.",
+    "sources": [
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What monthly internet stipend is provided to approved remote workers?",
+    "expected_source": "expense_guidelines",
+    "answer": "A monthly internet stipend of USD 50 is provided to approved remote workers.",
+    "sources": [
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the annual professional development budget for an individual contributor?",
+    "expected_source": "expense_guidelines",
+    "answer": "The annual professional development budget for an individual contributor is USD 2,000 per year.",
+    "sources": [
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "HR-POL-003_Performance_Management.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "How much bonus does NovaTech pay for passing an associate-level certification exam?",
+    "expected_source": "expense_guidelines",
+    "answer": "NovaTech pays a USD 500 bonus for passing an associate-level certification exam.",
+    "sources": [
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "HR-POL-002_Recruitment_and_Selection.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "After how many consecutive days of absence must an employee submit a medical certificate?",
+    "expected_source": "leave_policies",
+    "answer": "A medical certificate is required for absences of more than 3 consecutive days.",
+    "sources": [
+      "HR-LEA-002_Sick_Leave_Policy.md",
+      "HR-LEA-002_Sick_Leave_Policy.md",
+      "HR-LEA-002_Sick_Leave_Policy.md"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "How many Keeping in Touch days can an employee work during parental leave?",
+    "expected_source": "leave_policies",
+    "answer": "Employees may work up to 10 Keeping in Touch (KIT) days during parental leave.",
+    "sources": [
+      "HR-LEA-003_Parental_Leave_Policy.md",
+      "HR-LEA-003_Parental_Leave_Policy.md",
+      "HR-LEA-003_Parental_Leave_Policy.md"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What uptime percentage does the vendor guarantee for production workloads?",
+    "expected_source": "vendor_contracts",
+    "answer": "Vendor guarantees 99.95% monthly uptime for production workloads.",
+    "sources": [
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "Where must customer data be stored under the data protection clause?",
+    "expected_source": "vendor_contracts",
+    "answer": "Customer data must be stored in EU-West data centres. (The provided excerpt ends with \"unless\" \u2014 any exception to this requirement is not included in the documents supplied.)",
+    "sources": [
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+      "IT-PROC-003_Incident_Response.docx"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  },
+  {
+    "question": "What is the response SLA for a P1 Critical IT incident?",
+    "expected_source": "it_procedures",
+    "answer": "The response SLA for a P1 (Critical) IT incident is 30 minutes.",
+    "sources": [
+      "IT-PROC-003_Incident_Response.docx",
+      "IT-PROC-003_Incident_Response.docx",
+      "VEN-CON-001_CloudHosting_MSA.pdf"
+    ],
+    "chunks_used": 3,
+    "source_hit": true,
+    "has_answer": true
+  }
+]
