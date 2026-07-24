@@ -1,0 +1,142 @@
+[
+  {
+    "question": "What is the maximum expense claim without a receipt?",
+    "answer": "USD 25 per individual expense.",
+    "supported": true,
+    "confidence": "high",
+    "citations": [
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "chunk_index": 0,
+        "overlap_score": 0.8
+      },
+      {
+        "document": "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "chunk_index": 2,
+        "overlap_score": 0.4
+      }
+    ],
+    "unanswerable_reason": null
+  },
+  {
+    "question": "How many days of annual leave does a new employee get?",
+    "answer": "A new permanent full-time employee is entitled to 20 days of annual leave per year. Leave accrues monthly and begins from the first day of employment.",
+    "supported": true,
+    "confidence": "high",
+    "citations": [
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "chunk_index": 0,
+        "overlap_score": 0.5
+      },
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "chunk_index": 1,
+        "overlap_score": 0.389
+      },
+      {
+        "document": "HR-LEA-002_Sick_Leave_Policy.md",
+        "chunk_index": 2,
+        "overlap_score": 0.222
+      }
+    ],
+    "unanswerable_reason": null
+  },
+  {
+    "question": "What uptime percentage does the vendor guarantee for production workloads?",
+    "answer": "The vendor guarantees 99.95% monthly uptime for production workloads.",
+    "supported": true,
+    "confidence": "high",
+    "citations": [
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "chunk_index": 0,
+        "overlap_score": 1.0
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "chunk_index": 1,
+        "overlap_score": 0.143
+      }
+    ],
+    "unanswerable_reason": null
+  },
+  {
+    "question": "What is the response SLA for a P1 Critical IT incident?",
+    "answer": "The response SLA for a P1 Critical incident is 30 minutes.",
+    "supported": true,
+    "confidence": "high",
+    "citations": [
+      {
+        "document": "IT-PROC-003_Incident_Response.docx",
+        "chunk_index": 0,
+        "overlap_score": 0.571
+      },
+      {
+        "document": "IT-PROC-003_Incident_Response.docx",
+        "chunk_index": 1,
+        "overlap_score": 0.429
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "chunk_index": 2,
+        "overlap_score": 0.143
+      }
+    ],
+    "unanswerable_reason": null
+  },
+  {
+    "question": "How many Keeping in Touch days can an employee work during parental leave?",
+    "answer": "Employees may work up to 10 Keeping in Touch (KIT) days during parental leave.",
+    "supported": true,
+    "confidence": "medium",
+    "citations": [
+      {
+        "document": "HR-LEA-003_Parental_Leave_Policy.md",
+        "chunk_index": 0,
+        "overlap_score": 0.75
+      }
+    ],
+    "unanswerable_reason": null
+  },
+  {
+    "question": "What is the CEO's salary at NovaTech?",
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "supported": false,
+    "confidence": "low",
+    "citations": [],
+    "unanswerable_reason": "Model could not find answer in retrieved context"
+  },
+  {
+    "question": "How many employees does NovaTech have globally?",
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "supported": false,
+    "confidence": "low",
+    "citations": [],
+    "unanswerable_reason": "Model could not find answer in retrieved context"
+  },
+  {
+    "question": "What is the company's revenue target for 2027?",
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "supported": false,
+    "confidence": "low",
+    "citations": [],
+    "unanswerable_reason": "Model could not find answer in retrieved context"
+  },
+  {
+    "question": "Who is the head of the IT department?",
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "supported": false,
+    "confidence": "low",
+    "citations": [],
+    "unanswerable_reason": "Model could not find answer in retrieved context"
+  },
+  {
+    "question": "What is NovaTech's stock ticker symbol?",
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "supported": false,
+    "confidence": "low",
+    "citations": [],
+    "unanswerable_reason": "Model could not find answer in retrieved context"
+  }
+]
