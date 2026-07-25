@@ -1,0 +1,57 @@
+[
+  {
+    "id": "hr-pol-001-chunk-0",
+    "content": "NovaTech Enterprises HR-POL-001 Code of Conduct Policy. This policy establishes the standards of professional behaviour expected from all employees of NovaTech Enterprises. It applies to all full-time, part-time, and contract staff across all departments and locations globally. Employees must treat all colleagues, clients, and partners with dignity and respect. Discrimination, harassment, or bullying of any kind will not be tolerated. Employees must not engage in activities that create a conflict of interest with company operations. Confidential company information must not be disclosed to unauthorised third parties.",
+    "filename": "HR-POL-001_Code_of_Conduct.pdf",
+    "doc_type": "pdf",
+    "page_number": 1,
+    "heading": "Code of Conduct Policy",
+    "department": "Human Resources",
+    "effective_date": "2026-03-01T00:00:00Z",
+    "chunk_id": "hr-pol-001-chunk-0"
+  },
+  {
+    "id": "it-proc-001-chunk-0",
+    "content": "NovaTech Enterprises IT-PROC-001 Password Management Procedure. This procedure defines the standards for creating, managing, and protecting passwords across all NovaTech systems. It applies to all employees, contractors, and system accounts. All user passwords must meet the following minimum requirements: minimum length 14 characters, must include at least one uppercase letter, one lowercase letter, one digit, and one special character, must not include the user name, username, or email address, must not be a previously used password with last 12 passwords blocked, must be changed every 90 days for privileged accounts and 180 days for standard accounts.",
+    "filename": "IT-PROC-001_Password_Management.docx",
+    "doc_type": "docx",
+    "page_number": 1,
+    "heading": "Password Management Procedure",
+    "department": "Information Technology",
+    "effective_date": "2026-01-01T00:00:00Z",
+    "chunk_id": "it-proc-001-chunk-0"
+  },
+  {
+    "id": "fin-exp-001-chunk-0",
+    "content": "NovaTech Enterprises FIN-EXP-001 Travel and Expense Guidelines. These guidelines govern the reimbursement of business travel expenses incurred by NovaTech employees while conducting company business. All travel must be booked through the NovaTech Travel Portal powered by Concur Travel. Economy class is the standard for all domestic flights and international flights under 6 hours. Maximum nightly hotel rates excluding taxes: domestic major cities USD 220, domestic other cities USD 175, international developed USD 280, international emerging USD 200. Receipts are required for all individual expenses above USD 25. Expenses must be submitted within 30 calendar days of the expense being incurred.",
+    "filename": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+    "doc_type": "txt",
+    "page_number": 1,
+    "heading": "Travel and Expense Guidelines",
+    "department": "Finance",
+    "effective_date": "2026-01-01T00:00:00Z",
+    "chunk_id": "fin-exp-001-chunk-0"
+  },
+  {
+    "id": "hr-lea-001-chunk-0",
+    "content": "NovaTech Enterprises HR-LEA-001 Annual Leave Policy. All permanent full-time employees are entitled to paid annual leave as follows: 0 to 2 years of service 20 days per year, 2 to 5 years 23 days per year, 5 to 10 years 25 days per year, 10 or more years 28 days per year. Part-time employees receive leave on a pro-rata basis. The leave year runs from 1 January to 31 December. All annual leave must be requested and approved via the HR self-service portal Workday. A maximum of 5 days of annual leave may be carried over into the following leave year and must be taken by 31 March of the following year.",
+    "filename": "HR-LEA-001_Annual_Leave_Policy.md",
+    "doc_type": "md",
+    "page_number": 1,
+    "heading": "Annual Leave Policy",
+    "department": "Human Resources",
+    "effective_date": "2026-01-01T00:00:00Z",
+    "chunk_id": "hr-lea-001-chunk-0"
+  },
+  {
+    "id": "ven-con-001-chunk-0",
+    "content": "NovaTech Enterprises VEN-CON-001 Master Services Agreement with CloudScale Solutions Ltd. This MSA is entered into as of 1 February 2026 between NovaTech Enterprises Inc as Customer and CloudScale Solutions Ltd as Vendor. Vendor will provide cloud hosting and managed infrastructure services including managed Kubernetes clusters, object storage, CDN services, and 24/7 NOC monitoring. The monthly base fee is USD 48,000. Payment is due within 30 days of invoice date. Vendor guarantees 99.95% monthly uptime for production workloads. Customer data must be stored in EU-West data centres and encrypted in transit using TLS 1.3 and at rest using AES-256.",
+    "filename": "VEN-CON-001_CloudHosting_MSA.pdf",
+    "doc_type": "pdf",
+    "page_number": 1,
+    "heading": "Master Services Agreement - Cloud Hosting",
+    "department": "Legal",
+    "effective_date": "2026-02-01T00:00:00Z",
+    "chunk_id": "ven-con-001-chunk-0"
+  }
+]

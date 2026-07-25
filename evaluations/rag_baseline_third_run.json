@@ -416,7 +416,7 @@
   {
     "question": "What is the probation period policy at NovaTech?",
     "expected_source": "hr_policies",
-    "expected_supported": false,
+    "expected_supported": true,
     "retrieved_correct_source": true,
     "answer_supported": false,
     "answer_has_keyword": false,

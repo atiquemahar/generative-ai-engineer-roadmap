@@ -1,6 +1,180 @@
-# Day 15 — MMR Retrieval Findings
+# Day 15 — Retrieval Evaluation Findings
 
-## Final Results
+## Final Configuration (Proceeding to Day 16)
+
+```
+Retrieval:        Similarity search
+k:                5
+max_output_tokens: 1000
+Overall pass rate: 29/30 (96.7%)
+```
+
+---
+
+## Complete Run History
+
+| Run | Retrieval | k | Tokens | Score | Primary issue |
+|---|---|---:|---:|---:|---|
+| Day 14 baseline | Similarity | 3 | 500 | 4/30 | Evaluation metadata bug (source path vs filename) |
+| Run 2 | Similarity | 3 | 500 | 20/30 | Source-category prefix fix applied |
+| Run 3 | Similarity | 3 | 500 | 25/30 | Citation/retrieval separation fixed; probation case corrected |
+| Day 15 MMR | MMR | 5 | 500 | 28/30 (93.3%) | 2 failures: false refusal + incomplete answer |
+| Day 15 Similarity | Similarity | 5 | 1000 | 29/30 (96.7%) | 1 failure: policy ambiguity at exactly 3 years |
+
+---
+
+## Final Comparison: MMR vs Similarity
+
+Both configurations reach near-identical scores on the current 30-case suite.
+
+| Configuration | Score | Remaining failure |
+|---|---:|---|
+| MMR, k=5, fetch_k=20, 500 tokens | 28/30 | False refusal on onboarding question (answer exists in doc) |
+| Similarity, k=5, 1000 tokens | 29/30 | Sick-leave ambiguity at exactly 3 years (data issue, not retrieval) |
+
+**Decision: proceed with similarity search, k=5, max_output_tokens=1000.**
+
+MMR still failed a genuinely answerable question despite the exact answer existing
+in the retrieved document. The similarity-search failure is a test-data ambiguity,
+not a retrieval or generation problem. Similarity search is the stronger baseline
+for the Phase 3 project.
+
+MMR latency was lower in this run (3,656 ms vs 4,922 ms) but a single run is not
+sufficient evidence that MMR is consistently faster — LLM generation latency varies.
+
+---
+
+## The One Remaining Failure — Sick Leave at 3 Years
+
+**Question:** "What is the sick leave entitlement for 3 years experience?"
+**Expected keyword:** `15`
+**Retrieved:** HR-LEA-002_Sick_Leave_Policy.md ✓
+**Result:** Model refused or gave ambiguous answer
+
+**Root cause — policy table has an overlapping boundary:**
+
+```
+1–3 years  → 15 days
+3+ years   → 20 days
+```
+
+At exactly 3 years both rows appear to apply. The model correctly identifies the
+ambiguity. This is a test-data problem, not a retrieval or generation failure.
+
+**Fix for Day 16 onward — replace with unambiguous question:**
+
+```json
+{
+  "question": "What is the sick leave entitlement for 2 years of service?",
+  "expected_source": "leave_policies",
+  "expected_supported": true,
+  "expected_keywords": ["15"]
+}
+```
+
+or:
+
+```json
+{
+  "question": "What is the sick leave entitlement for 4 years of service?",
+  "expected_source": "leave_policies",
+  "expected_supported": true,
+  "expected_keywords": ["20"]
+}
+```
+
+---
+
+## Experiment Design — What Each Run Isolated
+
+The four Day 15 runs were not perfectly controlled comparisons because retrieval
+strategy and output-token budget changed together. The correct isolated comparison
+is:
+
+| Run | Retrieval | k | Tokens | What it isolates |
+|---|---|---:|---:|---|
+| Day 14 baseline | Similarity | 3 | 500 | Original baseline |
+| Day 15 MMR | MMR | 5 | 500 | Diversity vs similarity (equal token budget) |
+| *(not run)* | Similarity | 5 | 500 | k=3 vs k=5 with same strategy and tokens |
+| Day 15 final | Similarity | 5 | 1000 | Output budget effect on completeness |
+
+The `similarity k=5, tokens=500` run was not executed. The 29/30 result therefore
+combines the effect of larger k and larger output budget — both likely contributed.
+The annual-leave incomplete answer from MMR run (truncated at 500 tokens) resolved
+at 1000 tokens, suggesting the output budget was the primary factor there.
+
+**Implication for Day 16+:** if the Phase 3 project shows incomplete answers,
+increase `max_output_tokens` before changing retrieval strategy.
+
+---
+
+## Evaluation Fixes Applied Across Runs
+
+### Run 1 → Run 2: Source-category prefix map
+
+```python
+SOURCE_CATEGORY_MAP = {
+    "expense_guidelines": ["fin-exp"],
+    "leave_policies":     ["hr-lea"],
+    "hr_policies":        ["hr-pol"],
+    "it_procedures":      ["it-proc"],
+    "vendor_contracts":   ["ven-con"],
+}
+```
+
+Filenames like `VEN-CON-001_CloudHosting_MSA.pdf` do not contain the string
+`"vendor_contracts"`. Without this map, all vendor contract retrieval checks
+returned False regardless of what was actually retrieved.
+
+### Run 2 → Run 3: Retrieval evidence separated from citations
+
+```python
+retrieved_sources: list[str] = Field(default_factory=list)  # raw FAISS results
+citations: list[Citation] = []                               # only for supported answers
+```
+
+Refusals correctly return empty citations. The evaluator now measures retrieval
+against `retrieved_sources`, not `citations`, so refusals are not penalised for
+having no citations.
+
+### Run 3 → Run 4: Probation policy corrected
+
+```json
+{
+  "question": "What is the probation period policy at NovaTech?",
+  "expected_supported": false
+}
+```
+
+No probation content exists in any of the 15 source documents. This was always
+an unanswerable question — the test case was misconfigured.
+
+---
+
+## MMR Limitation to Document
+
+`max_marginal_relevance_search()` does not return FAISS similarity scores.
+All citation relevance scores from the MMR run display as `0.000`.
+These are placeholders, not MMR scores, and should not be used to compare
+chunk quality. This is documented so the Day 16 evaluation report is not
+misread.
+
+---
+
+## Saved Files
+
+| File | Contents |
+|---|---|
+| `evaluations/rag_baseline.json` | Day 14 / Run 1 raw results |
+| `evaluations/day15_mmr_results.json` | Day 15 MMR run (28/30) |
+| `evaluations/day15_similarity_k5_tokens1000.json` | Day 15 final run (29/30) |
+
+Do not overwrite `rag_baseline.json` — it is the Day 14 reference point for
+all future comparisons in Phase 3.
+
+---
+
+## Metrics at Final Configuration (29/30)
 
 | Metric | Score |
 |---|---:|
@@ -11,188 +185,17 @@
 | Groundedness rate | 95.7% (22/23) |
 | Keyword accuracy | 91.3% (21/23) |
 | Refusal accuracy | 100% (7/7) |
-| Overall pass rate | 93.3% (28/30) |
-| Average latency | 3,808 ms |
+| Overall pass rate | 96.7% (29/30) |
+| Average latency | 4,922 ms |
 
 ---
 
-## Run History
-
-The project reached the Day 15 result through four iterations. The early runs are useful because they show the difference between a retrieval problem, an evaluation-metadata problem, and an answer-generation problem.
-
-| Run | Result | What changed or was discovered |
-|---|---:|---|
-| Run 1 | 4/30 passes | The first baseline evaluation exposed a source-tracking problem. The evaluator looked only at citations, while refusals intentionally had no citations. In addition, some FAISS metadata used `source` paths rather than `filename`, so source-category checks could not reliably identify retrieved documents. |
-| Run 2 | 20/30 passes | Source normalization and category-prefix checks were introduced. Source names such as `FIN-EXP`, `HR-LEA`, `HR-POL`, `IT-PROC`, and `VEN-CON` were used to measure category retrieval. This showed that many earlier failures were evaluation issues rather than missing documents. |
-| Run 3 | 25/30 passes (83.3%) | The citation pipeline and evaluator were corrected: raw retrieval evidence was separated from citations, refusal scoring was limited to unanswerable cases, and answerable cases required retrieval, support, and expected keywords. This run still used the Day 14 similarity-search baseline and identified the remaining false refusals. |
-| Run 4 — Day 15 MMR | 28/30 passes (93.3%) | Retrieval changed from similarity search with `k=3` to MMR with `k=5` and `fetch_k=20`. The evaluation set was also corrected so the missing probation-policy question is treated as unanswerable. MMR improved context diversity and reduced false refusals. |
-
-### Run 1: Initial evaluation problems
-
-The first saved baseline run passed only **4 of 30** cases. This was not a reliable measure of RAG quality because the evaluation did not yet distinguish between:
-
-- raw documents retrieved by FAISS,
-- citations attached to a supported answer, and
-- a deliberate refusal with no citations.
-
-The pipeline correctly returned no citations for an unsupported answer, but the evaluator interpreted empty citations as failed retrieval. This made deliberate refusals and answerable questions with citation-metadata issues appear to be retrieval failures.
-
-### Run 2: Source-category tracking
-
-The second saved baseline run improved to **20 of 30** passes after source handling was made explicit.
-
-The following changes made category-level retrieval measurable:
-
-- source metadata was normalized to filenames with `Path(...).name`;
-- category prefixes were mapped to the expected test category;
-- matching was made case-insensitive;
-- the FAISS query embedding model was kept aligned with the index model, `text-embedding-3-small`.
-
-This prevented false misses caused by full file paths, missing `filename` metadata, and casing differences.
-
-### Run 3: Corrected Day 14 baseline evaluation
-
-The third run reached **25 of 30** passes. The main changes were evaluation correctness fixes:
-
-```python
-retrieved_sources: list[str] = Field(default_factory=list)
-```
-
-`retrieved_sources` records all FAISS results even when the model refuses. In contrast, `citations` remains empty for a refusal, preserving citation integrity.
-
-The evaluator was also changed so that:
-
-- answerable questions pass only when retrieval, support, and expected keywords all pass;
-- deliberately unanswerable questions pass when the model correctly refuses;
-- `correctly_refused` is not reported as `True` for answerable cases;
-- retrieval quality is measured against raw retrieved sources rather than answer citations.
-
-The reported Run 3 result preceded the final test-case correction for the probation-policy question. Because the source documents contain no probation-policy content, that case belongs in the unanswerable group.
-
-### Run 4: Day 15 MMR retrieval
-
-Run 4 is the current Day 15 result: **28 of 30** passes.
-
-Instead of selecting only the nearest chunks, MMR selects relevant chunks while reducing redundancy. The expanded, more diverse context resolved several false refusals from the similarity-search baseline.
-
-The remaining failures are no longer document-category retrieval misses. Both have the correct category in the retrieved source list:
-
-- the 90-day onboarding question was refused despite retrieving an HR-policy document;
-- the annual-leave and carry-over answer was incomplete, so it missed the expected numeric keyword.
-
----
-
-## 1. Objective
-
-Day 14 used standard similarity search with three retrieved chunks. Some answerable questions were refused even when a document from the correct category was retrieved. The likely cause was that the top results contained duplicate or non-supporting chunks, leaving the model without the exact policy section needed to answer.
-
-Day 15 tests **Maximum Marginal Relevance (MMR)** retrieval to improve the diversity of the context supplied to the model.
-
----
-
-## 2. Retrieval Configuration
-
-The same FAISS index and Azure embedding deployment were used. The index was built with `text-embedding-3-small`, and the same model was used for retrieval queries to keep the query vectors compatible with the stored vectors.
-
-```python
-docs = self.vectorstore.max_marginal_relevance_search(
-    query,
-    k=5,
-    fetch_k=20,
-)
-```
-
-| Setting | Value |
-|---|---|
-| Retrieval strategy | Maximum Marginal Relevance (MMR) |
-| Returned chunks (`k`) | 5 |
-| Candidates considered (`fetch_k`) | 20 |
-| Vector store | FAISS |
-| Embedding model | `text-embedding-3-small` |
-
-MMR balances relevance with diversity. It first considers the 20 most relevant candidate chunks, then selects five chunks that are both relevant to the question and less redundant with one another.
-
----
-
-## 3. Evaluation Improvements
-
-The evaluation now separates retrieval evidence from user-facing citations.
-
-`retrieved_sources` records every document returned by FAISS, including when the model refuses to answer. `citations` remains empty for a refusal so the pipeline never fabricates evidence for an unsupported answer.
-
-This distinction makes the metrics meaningful:
-
-- **Retrieval hit rate** checks whether the expected document category was retrieved.
-- **Groundedness rate** checks whether the final answer was supported by retrieved text.
-- **Refusal accuracy** checks only deliberately unanswerable questions.
-- **Overall pass rate** requires retrieval, support, and expected keywords for answerable questions; it requires a correct refusal for unanswerable questions.
-
-The probation-policy question was also corrected to `expected_supported: false`, because no probation-policy content exists in the source documents.
-
----
-
-## 4. What the Results Show
-
-The pipeline retrieved a document from the expected category for all 23 answerable questions:
-
-```text
-Retrieval hit rate: 23 / 23 = 100%
-```
-
-It also refused all seven unanswerable questions without hallucinating:
-
-```text
-Refusal accuracy: 7 / 7 = 100%
-```
-
-The overall score of 28/30 shows that MMR produced a strong and diverse retrieval context for most questions. However, a correct document category is not the same as retrieving the exact supporting chunk. The remaining failures demonstrate why chunk-level inspection is still necessary.
-
----
-
-## 5. Remaining Failures
-
-### Q1: 90-day onboarding programme
-
-The retrieval step included `HR-POL-002_Recruitment_and_Selection.pdf`, the expected HR-policy source, but the model returned the standard refusal.
-
-The source document contains the answer:
-
-> The onboarding programme spans 90 days and includes mandatory compliance training in weeks 1 and 4.
-
-This is a false refusal. The retrieved result came from the correct document category, but the exact onboarding chunk may not have been included among the five selected chunks, or the model did not identify it in the supplied context.
-
-### Q2: Annual leave over five years and carry-over
-
-The pipeline returned an incomplete answer:
-
-```text
-- Annual leave: Employees with
-```
-
-The answer was considered grounded because it overlapped with a retrieved annual-leave chunk, but it did not include the expected `25` days or the five-day carry-over limit. This is an output-completeness failure rather than a category-retrieval failure.
-
-The next diagnostic step is to inspect the Responses API completion status and incomplete details. The current request uses `max_output_tokens=500`; increasing that limit and recording response status will determine whether the output was truncated.
-
----
-
-## 6. Important MMR Limitation
-
-`max_marginal_relevance_search()` returns documents, not the original FAISS similarity scores. The Day 15 pipeline therefore assigns `0.0` when it converts documents into `(document, score)` pairs for compatibility with the citation code.
-
-Any displayed `0.000` score in the Day 15 context is a placeholder, not an MMR relevance score, and should not be used to judge retrieval quality.
-
----
-
-## 7. Next Steps
-
-1. Preserve Day 14 as the similarity-search baseline and save Day 15 results separately.
-2. Record the Day 15 output in `evaluations/day15_mmr_results.json` rather than overwriting the baseline result file.
-3. Log the retrieved chunk text or a short preview for failed questions, not only the document filename.
-4. Check the Azure Responses completion status for incomplete answers and consider increasing `max_output_tokens` from 500 to 1,000.
-5. Tune the MMR relevance/diversity trade-off with `lambda_mult` (for example, `0.7`) after establishing this `k=5`, `fetch_k=20` result as the first MMR benchmark.
-
----
-
-## Conclusion
-
-MMR retrieval achieved a **93.3% overall pass rate**, with perfect document-category retrieval and perfect refusal behavior. The remaining two failures are focused, diagnosable issues: one false refusal despite the correct document category and one incomplete answer. The experiment demonstrates that retrieval diversity improves RAG reliability, while also showing that document-level retrieval metrics must be complemented by chunk-level and output-completeness checks.
+## Proceeding to Day 16
+
+Phase 3 (Enterprise Knowledge Agent, Days 16–27) starts with this baseline:
+
+- Retrieval: similarity search, k=5
+- Embeddings: text-embedding-3-small
+- Output budget: max_output_tokens=1000
+- Pass rate: 96.7%
+- Known open issue: sick-leave boundary ambiguity (test data fix, not code fix)
