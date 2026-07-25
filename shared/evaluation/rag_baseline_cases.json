@@ -1,0 +1,151 @@
+[
+  {"question": "What is the maximum expense claim without a receipt?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["25"]},
+
+  {"question": "How many days of annual leave does a new employee get?",
+   "expected_source": "leave_policies",
+   "expected_supported": true,
+   "expected_keywords": ["20"]},
+
+  {"question": "What VPN software is approved for remote access?",
+   "expected_source": "it_procedures",
+   "expected_supported": false,
+   "expected_keywords": []},
+
+  {"question": "What uptime does the vendor guarantee?",
+   "expected_source": "vendor_contracts",
+   "expected_supported": true,
+   "expected_keywords": ["99.95"]},
+
+  {"question": "What is the P1 critical incident response SLA?",
+   "expected_source": "it_procedures",
+   "expected_supported": true,
+   "expected_keywords": ["30 minutes"]},
+
+  {"question": "How many KIT days during parental leave?",
+   "expected_source": "leave_policies",
+   "expected_supported": true,
+   "expected_keywords": ["10"]},
+
+  {"question": "Within how many days must expenses be submitted?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["30"]},
+
+  {"question": "What is the mileage reimbursement rate?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["0.67"]},
+
+  {"question": "What is the home office setup allowance?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["800"]},
+
+  {"question": "What monthly internet stipend do remote workers receive?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["50"]},
+
+  {"question": "What is the annual professional development budget?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["2,000"]},
+
+  {"question": "How much bonus for passing an associate-level certification?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": ["500"]},
+
+  {"question": "How many consecutive absence days before medical certificate required?",
+   "expected_source": "leave_policies",
+   "expected_supported": true,
+   "expected_keywords": ["3"]},
+
+  {"question": "Where must customer data be stored?",
+   "expected_source": "vendor_contracts",
+   "expected_supported": true,
+   "expected_keywords": ["EU-West"]},
+
+  {"question": "What are shortlisting requirements?",
+   "expected_source": "hr_policies",
+   "expected_supported": true,
+   "expected_keywords": ["two"]},
+
+  {"question": "What is in the 90-day onboarding programme?",
+   "expected_source": "hr_policies",
+   "expected_supported": true,
+   "expected_keywords": ["90"]},
+
+  {"question": "What is the sick leave entitlement for 3 years experience?",
+   "expected_source": "leave_policies",
+   "expected_supported": true,
+   "expected_keywords": ["15"]},
+
+  {"question": "What is the annual leave for employees with over 5 years of service and what is carry-over limit?",
+   "expected_source": "leave_policies",
+   "expected_supported": true,
+   "expected_keywords": ["25"]},
+
+  {"question": "What are the payment terms in the professional services agreement?",
+   "expected_source": "vendor_contracts",
+   "expected_supported": true,
+   "expected_keywords": ["21"]},
+
+  {"question": "What are the SaaS subscription payment terms?",
+   "expected_source": "vendor_contracts",
+   "expected_supported": true,
+   "expected_keywords": ["45"]},
+
+  {"question": "What is required to expense a conference registration?",
+   "expected_source": "expense_guidelines",
+   "expected_supported": true,
+   "expected_keywords": []},
+
+  {"question": "What happens to unused annual leave at year end?",
+   "expected_source": "leave_policies",
+   "expected_supported": true,
+   "expected_keywords": []},
+
+  {"question": "What are password complexity requirements?",
+   "expected_source": "it_procedures",
+   "expected_supported": true,
+   "expected_keywords": []},
+
+  {"question": "What is the probation period policy at NovaTech?",
+   "expected_source": "hr_policies",
+   "expected_supported": false,
+   "expected_keywords": []},
+
+  {"question": "What is the vendor termination notice period?",
+   "expected_source": "vendor_contracts",
+   "expected_supported": true,
+   "expected_keywords": []},
+
+  {"question": "What is the CEO salary?",
+   "expected_source": "hr_policies",
+   "expected_supported": false,
+   "expected_keywords": []},
+
+  {"question": "How many total employees does NovaTech have?",
+   "expected_source": "hr_policies",
+   "expected_supported": false,
+   "expected_keywords": []},
+
+  {"question": "What is the company revenue target for 2027?",
+   "expected_source": "hr_policies",
+   "expected_supported": false,
+   "expected_keywords": []},
+
+  {"question": "Who is the head of the IT department?",
+   "expected_source": "it_procedures",
+   "expected_supported": false,
+   "expected_keywords": []},
+
+  {"question": "What is NovaTech stock ticker symbol?",
+   "expected_source": "vendor_contracts",
+   "expected_supported": false,
+   "expected_keywords": []}
+]

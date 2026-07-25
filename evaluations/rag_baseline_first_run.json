@@ -1,0 +1,488 @@
+[
+  {
+    "question": "What is the maximum expense claim without a receipt?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 11435.95,
+    "answer": "",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "How many days of annual leave does a new employee get?",
+    "expected_source": "leave_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 5780.95,
+    "answer": "A new permanent full-time employee is entitled to 20 days of annual leave per year. The leave accrues monthly and begins accruing from their first day of employment.",
+    "sources": [
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-002_Sick_Leave_Policy.md"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What VPN software is approved for remote access?",
+    "expected_source": "it_procedures",
+    "expected_supported": false,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 4308.67,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What uptime does the vendor guarantee?",
+    "expected_source": "vendor_contracts",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 3902.72,
+    "answer": "The vendor guarantees 99.95% monthly uptime for production workloads.",
+    "sources": [
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-001_CloudHosting_MSA.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the P1 critical incident response SLA?",
+    "expected_source": "it_procedures",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 3851.64,
+    "answer": "P1 (Critical) \u2014 Response SLA = 30 minutes.",
+    "sources": [
+      "IT-PROC-003_Incident_Response.docx",
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "IT-PROC-003_Incident_Response.docx"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "How many KIT days during parental leave?",
+    "expected_source": "leave_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 4568.39,
+    "answer": "Employees may work up to 10 Keeping in Touch (KIT) days during parental leave.",
+    "sources": [
+      "HR-LEA-003_Parental_Leave_Policy.md"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "Within how many days must expenses be submitted?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": true,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 3287.07,
+    "answer": "Expenses must be submitted within 30 calendar days of the expense being incurred.",
+    "sources": [
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+      "VEN-CON-003_Professional_Services_Agreement.pdf"
+    ],
+    "pass_overall": true,
+    "error": null
+  },
+  {
+    "question": "What is the mileage reimbursement rate?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": true,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 3493.36,
+    "answer": "The mileage reimbursement rate is USD 0.67 per mile (2026 IRS rate).",
+    "sources": [
+      "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "pass_overall": true,
+    "error": null
+  },
+  {
+    "question": "What is the home office setup allowance?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": true,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 6722.15,
+    "answer": "The home office setup allowance is a one-time USD 800. It may be used for items such as external monitor(s), ergonomic keyboard and mouse, desk lamp, webcam (if not integrated), headset for calls, and a desk or office chair (desk/chair limited to up to USD 400 of the total). Items must be purchased within 90 days of approval and receipts submitted via Concur; items remain property of NovaTech and must be returned upon departure.",
+    "sources": [
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "pass_overall": true,
+    "error": null
+  },
+  {
+    "question": "What monthly internet stipend do remote workers receive?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": true,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 7195.77,
+    "answer": "A monthly internet stipend of USD 50. It is processed as a non-taxable reimbursement via payroll and does not require a monthly receipt; employees on hybrid arrangements (fewer than 3 days remote per week) are not eligible.",
+    "sources": [
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+      "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+    ],
+    "pass_overall": true,
+    "error": null
+  },
+  {
+    "question": "What is the annual professional development budget?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 6903.39,
+    "answer": "Each employee has an annual professional development budget:\n- Individual Contributors: USD 2,000 per year\n- Senior / Lead employees: USD 3,000 per year\n- Managers: USD 4,000 per year\n- Directors and above: Approved case-by-case by CHRO\n\nThe budget resets on 1 January and unused budget does not carry over.",
+    "sources": [
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "HR-POL-003_Performance_Management.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "How much bonus for passing an associate-level certification?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 5744.94,
+    "answer": "A one-time bonus of USD 500.",
+    "sources": [
+      "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+      "HR-POL-003_Performance_Management.pdf",
+      "VEN-CON-003_Professional_Services_Agreement.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "How many consecutive absence days before medical certificate required?",
+    "expected_source": "leave_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 6054.47,
+    "answer": "A medical certificate is required for absences of more than 3 consecutive days.",
+    "sources": [
+      "HR-LEA-002_Sick_Leave_Policy.md",
+      "HR-LEA-002_Sick_Leave_Policy.md",
+      "HR-LEA-002_Sick_Leave_Policy.md"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "Where must customer data be stored?",
+    "expected_source": "vendor_contracts",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 4923.28,
+    "answer": "Customer data must be stored in EU-West data centres.",
+    "sources": [
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+      "IT-PROC-001_Password_Management.docx"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What are shortlisting requirements?",
+    "expected_source": "hr_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 7280.15,
+    "answer": "Shortlisting must be conducted by at least two people using a standardised scoring matrix provided by HR. Personal information such as name, address, and age must be anonymised during the initial screen.",
+    "sources": [
+      "HR-POL-002_Recruitment_and_Selection.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is in the 90-day onboarding programme?",
+    "expected_source": "hr_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 8192.79,
+    "answer": "",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the sick leave entitlement for 3 years experience?",
+    "expected_source": "leave_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 8110.66,
+    "answer": "",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the annual leave for employees with over 5 years of service and what is carry-over limit?",
+    "expected_source": "leave_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 7691.43,
+    "answer": "- Annual leave:\n  - 5\u201310 years of service: 25 days per year.\n  - 10+ years of service: 28 days per year.\n- Carry-over limit: A maximum of 5 days may be carried over into the following leave year; carried-over leave must be taken by 31 March of the following year or it is forfeited.",
+    "sources": [
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What are the payment terms in the professional services agreement?",
+    "expected_source": "vendor_contracts",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 8308.7,
+    "answer": "- Consultant invoices bi-weekly based on hours logged in the Client-approved time tracking system.  \n- Invoices must include consultant name, hours by day, and task reference from the SOW.  \n- Payment is due within 21 days of invoice.  \n- Disputed amounts must be raised within 10 days of invoice receipt; undisputed amounts remain payable.  \n- If the agreement is terminated for convenience (30 days written notice), the Client shall",
+    "sources": [
+      "VEN-CON-001_CloudHosting_MSA.pdf",
+      "VEN-CON-003_Professional_Services_Agreement.pdf",
+      "VEN-CON-003_Professional_Services_Agreement.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What are the SaaS subscription payment terms?",
+    "expected_source": "vendor_contracts",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 5435.22,
+    "answer": "- Initial subscription term: 24 months commencing 15 March 2026.\n- Annual subscription fees: USD 240,000 for Year 1 and USD 252,000 for Year 2.\n- Fees are invoiced annually in advance.\n- Payment is due within 45 days of invoice.\n- All fees are non-refundable.",
+    "sources": [
+      "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+      "VEN-CON-001_CloudHosting_MSA.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is required to expense a conference registration?",
+    "expected_source": "expense_guidelines",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 10046.89,
+    "answer": "",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What happens to unused annual leave at year end?",
+    "expected_source": "leave_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 7895.41,
+    "answer": "Up to 5 days of annual leave may be carried over into the following leave year. Carried-over leave must be",
+    "sources": [
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md",
+      "HR-LEA-001_Annual_Leave_Policy.md"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What are password complexity requirements?",
+    "expected_source": "it_procedures",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 10762.14,
+    "answer": "- Minimum length: 14 characters  \n- Must include at least one uppercase letter, one lowercase letter, one digit, and one special character  \n- Must not include the user's name, username, or email address  \n- Must not be a previously used password (last 12 passwords are blocked)  \n- Must be changed every 90 days for privileged accounts;",
+    "sources": [
+      "IT-PROC-001_Password_Management.docx"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the probation period policy at NovaTech?",
+    "expected_source": "hr_policies",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 4730.43,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the vendor termination notice period?",
+    "expected_source": "vendor_contracts",
+    "expected_supported": true,
+    "retrieved_correct_source": false,
+    "answer_supported": true,
+    "answer_has_keyword": true,
+    "correctly_refused": true,
+    "latency_ms": 6967.43,
+    "answer": "30 days written notice.\n\n(Per VEN-CON-003_Professional_Services_Agreement: \"Either party may terminate this Agreement for convenience with 30 days written notice.\")",
+    "sources": [
+      "VEN-CON-003_Professional_Services_Agreement.pdf",
+      "VEN-CON-001_CloudHosting_MSA.pdf"
+    ],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the CEO salary?",
+    "expected_source": "hr_policies",
+    "expected_supported": false,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 4509.34,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "How many total employees does NovaTech have?",
+    "expected_source": "hr_policies",
+    "expected_supported": false,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 3292.0,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is the company revenue target for 2027?",
+    "expected_source": "hr_policies",
+    "expected_supported": false,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 3701.58,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "Who is the head of the IT department?",
+    "expected_source": "it_procedures",
+    "expected_supported": false,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 8812.66,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  },
+  {
+    "question": "What is NovaTech stock ticker symbol?",
+    "expected_source": "vendor_contracts",
+    "expected_supported": false,
+    "retrieved_correct_source": false,
+    "answer_supported": false,
+    "answer_has_keyword": false,
+    "correctly_refused": true,
+    "latency_ms": 4105.25,
+    "answer": "I don't have enough information in the provided documents to answer this question.",
+    "sources": [],
+    "pass_overall": false,
+    "error": null
+  }
+]

@@ -40,8 +40,8 @@ class CitationRAGPipeline:
         self.client = client
         self.model_name = model_name
 
-    def retrieve(self, query: str, k: int =3):
-        return self.vectorstore.similarity_search_with_score(query, k=k) 
+    def retrieve(self, query: str, k: int = 5):
+        return self.vectorstore.similarity_search_with_score(query, k=k)
 
     def build_context(self, doc_score_pairs: list) -> str:
         parts = []
@@ -123,7 +123,7 @@ class CitationRAGPipeline:
             model=self.model_name,
             instructions=system_prompt,
             input=user_input,
-            max_output_tokens=500,
+            max_output_tokens=1000,
         )
 
         answer = response.output_text.strip()
@@ -207,103 +207,3 @@ def loadPipeline() -> CitationRAGPipeline:
     model_name =os.environ["MODEL_DEPLOYMENT_NAME"]
 
     return CitationRAGPipeline(vectorstore, client, model_name)
-
-# ── Test cases ─────────────────────────────────────────────────────────────
-
-ANSWERABLE = [
-    "What is the maximum expense claim without a receipt?",
-    "How many days of annual leave does a new employee get?",
-    "What uptime percentage does the vendor guarantee for production workloads?",
-    "What is the response SLA for a P1 Critical IT incident?",
-    "How many Keeping in Touch days can an employee work during parental leave?",
-]
-
-UNANSWERABLE = [
-    "What is the CEO's salary at NovaTech?",
-    "How many employees does NovaTech have globally?",
-    "What is the company's revenue target for 2027?",
-    "Who is the head of the IT department?",
-    "What is NovaTech's stock ticker symbol?",
-]
-
-if __name__ == "__main__":
-    print("Loading pipeline...")
-    pipeline = loadPipeline()
-    print("Ready.\n")
-
-    # ── Answerable questions ───────────────────────────────────────────────
-    print("=" * 70)
-    print("ANSWERABLE QUESTIONS — Citations must be present")
-    print("=" * 70)
-
-    citation_errors = []    # citations pointing to non-retrieved docs
-
-    answerable_results = []
-    for i, question in enumerate(ANSWERABLE, 1):
-        result = pipeline.answer_with_citations(question)
-        answerable_results.append(result)
-
-        print(f"\n[{i}] Q: {question}")
-        print(f"     A: {result.answer[:120]}...")
-        print(f"     Supported: {result.supported} | Confidence: {result.confidence}")
-        print(f"     Citations ({len(result.citations)}):")
-
-        for c in result.citations:
-            print(f"       - {c.document} | chunk {c.chunk_index} | overlap {c.overlap_score:.3f}")
-
-        # Verify: no citation fabricated
-        if result.supported and not result.citations:
-            citation_errors.append(f"Q{i}: supported=True but no citations")
-
-    # ── Unanswerable questions ─────────────────────────────────────────────
-    print("\n" + "=" * 70)
-    print("UNANSWERABLE QUESTIONS — supported must be False")
-    print("=" * 70)
-
-    unanswerable_results = []
-    refusal_score = 0
-    for i, question in enumerate(UNANSWERABLE, 1):
-        result = pipeline.answer_with_citations(question)
-        unanswerable_results.append(result)
-        correct_refusal = not result.supported
-        if correct_refusal:
-            refusal_score += 1
-        status = "✓" if correct_refusal else "✗"
-        print(f"[{i}] {status} {question[:60]}")
-        if not correct_refusal:
-            print(f"     ⚠ Expected supported=False, got: {result.answer[:80]}...")
-
-    # ── Summary ───────────────────────────────────────────────────────────
-    print("\n" + "=" * 70)
-    print("SUMMARY")
-    print("=" * 70)
-    print(f"Refusal accuracy (unanswerable): {refusal_score}/{len(UNANSWERABLE)}")
-    if citation_errors:
-        print(f"Citation errors: {len(citation_errors)}")
-        for err in citation_errors:
-            print(f"  - {err}")
-    else:
-        print("Citation integrity: ✓ No fabricated citations")
-
-
-    # ── Save ──────────────────────────────────────────────────────────────
-    # Then save from stored results — no second model call
-    all_results = []
-    for q, r in zip(ANSWERABLE + UNANSWERABLE, answerable_results + unanswerable_results):
-        all_results.append({
-            "question": q,
-            "answer": r.answer,
-            "supported": r.supported,
-            "confidence": r.confidence,
-            "citations": [c.model_dump() for c in r.citations],
-            "unanswerable_reason": r.unanswerable_reason,
-        })
-
-    output_path = Path(REPO_ROOT) / "experiments" / "day14_citation_results.json"
-    with open(output_path, "w") as f:
-        json.dump(all_results, f, indent=2)
-    print(f"\nResults saved to: {output_path}")            
-
-
-        
-
