@@ -1,4 +1,8 @@
-# projects/knowledge_agent/search/schema.py
+"""
+projects/knowledge_agent/search/schema.py
+Day 16/17: index schema — Day 18: adds semantic configuration
+"""
+
 from azure.search.documents.indexes.models import (
     SearchIndex,
     SearchField,
@@ -8,9 +12,14 @@ from azure.search.documents.indexes.models import (
     VectorSearch,
     HnswAlgorithmConfiguration,
     VectorSearchProfile,
+    SemanticConfiguration,   # Day 18 additions
+    SemanticSearch,
+    SemanticPrioritizedFields,
+    SemanticField,
 )
 
 INDEX_NAME = "enterprise-knowledge"
+SEMANTIC_CONFIG_NAME = "knowledge-semantic-config"   # Day 18
 
 FOLDER_TO_DEPARTMENT = {
     "hr_policies": "Human Resources",
@@ -91,8 +100,28 @@ def build_index() -> SearchIndex:
         ]
     )
 
+    # Day 18 — semantic configuration
+    # content is the primary field the reranker reads.
+    # heading and department provide keyword signals for reranking.
+
+    semantic_search = SemanticSearch(
+        configurations=[
+            SemanticConfiguration(
+                name=SEMANTIC_CONFIG_NAME,
+                prioritized_fields=SemanticPrioritizedFields(
+                    content_fields=[SemanticField(field_name="content")],
+                    keywords_fields=[
+                        SemanticField(field_name="heading"),
+                        SemanticField(field_name="department"),
+                    ],
+                ),
+            )
+        ]
+    )
+
     return SearchIndex(
         name=INDEX_NAME,
         fields=fields,
         vector_search=vector_search,
+        semantic_search=semantic_search,
     )

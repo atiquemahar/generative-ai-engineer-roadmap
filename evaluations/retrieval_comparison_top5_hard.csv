@@ -1,0 +1,125 @@
+method,question,expected,correct_found,irrelevant_chunks,latency_ms
+Keyword,"If I'm traveling for work, how much can I spend on dinner each day?",FIN-EXP-001_Travel_Expense_Guidelines.txt,0,5,846.1
+Keyword,Can I book business class on an international flight that's longer than six hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,59.3
+Keyword,What's the deadline for submitting my travel reimbursement after a trip?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,56.8
+Keyword,Can I use my credit card statement instead of an itemized receipt for reimbursement?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,4,59.3
+Keyword,"Does the company help pay for desks, chairs, or monitors when working from home?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,4,71.9
+Keyword,How much does the company reimburse each month for home internet while working remotely?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,3,58.2
+Keyword,"If I prefer working from a coworking space, how many days each month are covered?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,4,58.9
+Keyword,How much funding is available each year for professional development courses?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,3,61.7
+Keyword,Is there a reward for earning an expert-level professional certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,3,56.4
+Keyword,"If I resign within six months after company-funded training, how much of the cost must I repay?",FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,56.3
+Keyword,"After working here for three years, how much paid vacation do I receive each year?",HR-LEA-001_Annual_Leave_Policy.md,1,4,59.9
+Keyword,How early should I request vacation if I plan to be away for more than ten consecutive days?,HR-LEA-001_Annual_Leave_Policy.md,0,5,59.5
+Keyword,What's the maximum amount of unused vacation I can carry into the next year?,HR-LEA-001_Annual_Leave_Policy.md,1,3,58.9
+Keyword,When is the final deadline to use any vacation carried over from last year?,HR-LEA-001_Annual_Leave_Policy.md,1,3,57.8
+Keyword,How many separate sick leave occurrences lead to a formal attendance review?,HR-LEA-002_Sick_Leave_Policy.md,1,2,53.7
+Keyword,At what point do I need to provide HR with a doctor's note for sick leave?,HR-LEA-002_Sick_Leave_Policy.md,1,1,80.3
+Keyword,"After returning from being sick for five days, what must I do within the next two days?",HR-LEA-002_Sick_Leave_Policy.md,1,2,56.4
+Keyword,"While on parental leave, how many Keeping in Touch days am I allowed to work?",HR-LEA-003_Parental_Leave_Policy.md,1,0,58.0
+Keyword,Does the company provide any leave for employees undergoing IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,4,56.9
+Keyword,How much leave can someone take after adopting a child?,HR-LEA-003_Parental_Leave_Policy.md,1,3,52.4
+Keyword,How long should hiring managers keep interview evaluation notes?,HR-POL-002_Recruitment_and_Selection.pdf,1,3,57.3
+Keyword,"Before hiring externally, how long must a vacancy be advertised to current employees?",HR-POL-002_Recruitment_and_Selection.pdf,1,2,54.1
+Keyword,"After someone verbally accepts a job offer, how quickly must the written contract be issued?",HR-POL-002_Recruitment_and_Selection.pdf,1,3,54.0
+Keyword,"At the beginning of the performance cycle, how many SMART objectives should each employee set?",HR-POL-003_Performance_Management.pdf,1,3,58.6
+Keyword,What happens if an employee receives a 'Needs Improvement' rating in two consecutive reviews?,HR-POL-003_Performance_Management.pdf,1,3,56.5
+Keyword,Where should shared passwords or account credentials be stored securely?,IT-PROC-001_Password_Management.docx,1,2,59.9
+Keyword,Who approves requests to install software that isn't normally permitted?,IT-PROC-002_Software_Installation.docx,1,2,57.7
+Keyword,How long does the security team have to evaluate software before giving approval?,IT-PROC-002_Software_Installation.docx,1,2,52.1
+Keyword,What are the stages the company follows when responding to a cybersecurity incident?,IT-PROC-003_Incident_Response.docx,1,4,52.9
+Keyword,"For a Priority 1 incident, how quickly must the root cause investigation be completed?",IT-PROC-003_Incident_Response.docx,1,3,80.9
+Keyword,"Even after a vendor contract ends, how long must confidential information continue to be protected?",VEN-CON-001_CloudHosting_MSA.pdf,1,4,54.6
+Vector,"If I'm traveling for work, how much can I spend on dinner each day?",FIN-EXP-001_Travel_Expense_Guidelines.txt,1,2,2352.0
+Vector,Can I book business class on an international flight that's longer than six hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,2,412.4
+Vector,What's the deadline for submitting my travel reimbursement after a trip?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,414.5
+Vector,Can I use my credit card statement instead of an itemized receipt for reimbursement?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,439.2
+Vector,"Does the company help pay for desks, chairs, or monitors when working from home?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,513.1
+Vector,How much does the company reimburse each month for home internet while working remotely?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,498.6
+Vector,"If I prefer working from a coworking space, how many days each month are covered?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,419.8
+Vector,How much funding is available each year for professional development courses?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,406.7
+Vector,Is there a reward for earning an expert-level professional certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,426.9
+Vector,"If I resign within six months after company-funded training, how much of the cost must I repay?",FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,420.1
+Vector,"After working here for three years, how much paid vacation do I receive each year?",HR-LEA-001_Annual_Leave_Policy.md,1,2,510.8
+Vector,How early should I request vacation if I plan to be away for more than ten consecutive days?,HR-LEA-001_Annual_Leave_Policy.md,1,4,443.0
+Vector,What's the maximum amount of unused vacation I can carry into the next year?,HR-LEA-001_Annual_Leave_Policy.md,1,1,456.0
+Vector,When is the final deadline to use any vacation carried over from last year?,HR-LEA-001_Annual_Leave_Policy.md,1,0,444.2
+Vector,How many separate sick leave occurrences lead to a formal attendance review?,HR-LEA-002_Sick_Leave_Policy.md,1,1,432.4
+Vector,At what point do I need to provide HR with a doctor's note for sick leave?,HR-LEA-002_Sick_Leave_Policy.md,1,1,544.6
+Vector,"After returning from being sick for five days, what must I do within the next two days?",HR-LEA-002_Sick_Leave_Policy.md,1,1,482.3
+Vector,"While on parental leave, how many Keeping in Touch days am I allowed to work?",HR-LEA-003_Parental_Leave_Policy.md,1,0,874.6
+Vector,Does the company provide any leave for employees undergoing IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,0,444.6
+Vector,How much leave can someone take after adopting a child?,HR-LEA-003_Parental_Leave_Policy.md,1,0,353.9
+Vector,How long should hiring managers keep interview evaluation notes?,HR-POL-002_Recruitment_and_Selection.pdf,1,3,417.0
+Vector,"Before hiring externally, how long must a vacancy be advertised to current employees?",HR-POL-002_Recruitment_and_Selection.pdf,1,0,511.3
+Vector,"After someone verbally accepts a job offer, how quickly must the written contract be issued?",HR-POL-002_Recruitment_and_Selection.pdf,1,1,516.8
+Vector,"At the beginning of the performance cycle, how many SMART objectives should each employee set?",HR-POL-003_Performance_Management.pdf,1,0,404.2
+Vector,What happens if an employee receives a 'Needs Improvement' rating in two consecutive reviews?,HR-POL-003_Performance_Management.pdf,1,1,559.7
+Vector,Where should shared passwords or account credentials be stored securely?,IT-PROC-001_Password_Management.docx,1,0,657.1
+Vector,Who approves requests to install software that isn't normally permitted?,IT-PROC-002_Software_Installation.docx,1,0,886.9
+Vector,How long does the security team have to evaluate software before giving approval?,IT-PROC-002_Software_Installation.docx,1,0,605.2
+Vector,What are the stages the company follows when responding to a cybersecurity incident?,IT-PROC-003_Incident_Response.docx,1,1,1829.7
+Vector,"For a Priority 1 incident, how quickly must the root cause investigation be completed?",IT-PROC-003_Incident_Response.docx,1,0,3377.8
+Vector,"Even after a vendor contract ends, how long must confidential information continue to be protected?",VEN-CON-001_CloudHosting_MSA.pdf,1,3,563.4
+Hybrid,"If I'm traveling for work, how much can I spend on dinner each day?",FIN-EXP-001_Travel_Expense_Guidelines.txt,1,2,1109.3
+Hybrid,Can I book business class on an international flight that's longer than six hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,2,741.0
+Hybrid,What's the deadline for submitting my travel reimbursement after a trip?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,608.9
+Hybrid,Can I use my credit card statement instead of an itemized receipt for reimbursement?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,459.2
+Hybrid,"Does the company help pay for desks, chairs, or monitors when working from home?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,638.7
+Hybrid,How much does the company reimburse each month for home internet while working remotely?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,387.7
+Hybrid,"If I prefer working from a coworking space, how many days each month are covered?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,514.1
+Hybrid,How much funding is available each year for professional development courses?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,3,526.4
+Hybrid,Is there a reward for earning an expert-level professional certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,510.5
+Hybrid,"If I resign within six months after company-funded training, how much of the cost must I repay?",FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,525.1
+Hybrid,"After working here for three years, how much paid vacation do I receive each year?",HR-LEA-001_Annual_Leave_Policy.md,1,2,512.6
+Hybrid,How early should I request vacation if I plan to be away for more than ten consecutive days?,HR-LEA-001_Annual_Leave_Policy.md,1,4,527.8
+Hybrid,What's the maximum amount of unused vacation I can carry into the next year?,HR-LEA-001_Annual_Leave_Policy.md,1,2,504.5
+Hybrid,When is the final deadline to use any vacation carried over from last year?,HR-LEA-001_Annual_Leave_Policy.md,1,0,526.3
+Hybrid,How many separate sick leave occurrences lead to a formal attendance review?,HR-LEA-002_Sick_Leave_Policy.md,1,1,523.8
+Hybrid,At what point do I need to provide HR with a doctor's note for sick leave?,HR-LEA-002_Sick_Leave_Policy.md,1,1,474.5
+Hybrid,"After returning from being sick for five days, what must I do within the next two days?",HR-LEA-002_Sick_Leave_Policy.md,1,1,528.7
+Hybrid,"While on parental leave, how many Keeping in Touch days am I allowed to work?",HR-LEA-003_Parental_Leave_Policy.md,1,0,520.4
+Hybrid,Does the company provide any leave for employees undergoing IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,0,538.0
+Hybrid,How much leave can someone take after adopting a child?,HR-LEA-003_Parental_Leave_Policy.md,1,0,484.9
+Hybrid,How long should hiring managers keep interview evaluation notes?,HR-POL-002_Recruitment_and_Selection.pdf,1,2,408.3
+Hybrid,"Before hiring externally, how long must a vacancy be advertised to current employees?",HR-POL-002_Recruitment_and_Selection.pdf,1,0,538.9
+Hybrid,"After someone verbally accepts a job offer, how quickly must the written contract be issued?",HR-POL-002_Recruitment_and_Selection.pdf,1,1,433.6
+Hybrid,"At the beginning of the performance cycle, how many SMART objectives should each employee set?",HR-POL-003_Performance_Management.pdf,1,0,428.9
+Hybrid,What happens if an employee receives a 'Needs Improvement' rating in two consecutive reviews?,HR-POL-003_Performance_Management.pdf,1,1,345.9
+Hybrid,Where should shared passwords or account credentials be stored securely?,IT-PROC-001_Password_Management.docx,1,1,465.2
+Hybrid,Who approves requests to install software that isn't normally permitted?,IT-PROC-002_Software_Installation.docx,1,0,441.9
+Hybrid,How long does the security team have to evaluate software before giving approval?,IT-PROC-002_Software_Installation.docx,1,0,350.9
+Hybrid,What are the stages the company follows when responding to a cybersecurity incident?,IT-PROC-003_Incident_Response.docx,1,1,591.8
+Hybrid,"For a Priority 1 incident, how quickly must the root cause investigation be completed?",IT-PROC-003_Incident_Response.docx,1,0,441.6
+Hybrid,"Even after a vendor contract ends, how long must confidential information continue to be protected?",VEN-CON-001_CloudHosting_MSA.pdf,1,3,442.2
+Hybrid+Semantic,"If I'm traveling for work, how much can I spend on dinner each day?",FIN-EXP-001_Travel_Expense_Guidelines.txt,1,2,738.5
+Hybrid+Semantic,Can I book business class on an international flight that's longer than six hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,2,614.3
+Hybrid+Semantic,What's the deadline for submitting my travel reimbursement after a trip?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,464.7
+Hybrid+Semantic,Can I use my credit card statement instead of an itemized receipt for reimbursement?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,3,625.1
+Hybrid+Semantic,"Does the company help pay for desks, chairs, or monitors when working from home?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,473.3
+Hybrid+Semantic,How much does the company reimburse each month for home internet while working remotely?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,567.3
+Hybrid+Semantic,"If I prefer working from a coworking space, how many days each month are covered?",FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,2,549.0
+Hybrid+Semantic,How much funding is available each year for professional development courses?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,616.4
+Hybrid+Semantic,Is there a reward for earning an expert-level professional certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,377.0
+Hybrid+Semantic,"If I resign within six months after company-funded training, how much of the cost must I repay?",FIN-EXP-003_Conference_and_Training_Expenses.txt,1,2,439.3
+Hybrid+Semantic,"After working here for three years, how much paid vacation do I receive each year?",HR-LEA-001_Annual_Leave_Policy.md,1,3,683.9
+Hybrid+Semantic,How early should I request vacation if I plan to be away for more than ten consecutive days?,HR-LEA-001_Annual_Leave_Policy.md,1,3,570.2
+Hybrid+Semantic,What's the maximum amount of unused vacation I can carry into the next year?,HR-LEA-001_Annual_Leave_Policy.md,1,3,697.5
+Hybrid+Semantic,When is the final deadline to use any vacation carried over from last year?,HR-LEA-001_Annual_Leave_Policy.md,1,1,528.9
+Hybrid+Semantic,How many separate sick leave occurrences lead to a formal attendance review?,HR-LEA-002_Sick_Leave_Policy.md,1,1,465.8
+Hybrid+Semantic,At what point do I need to provide HR with a doctor's note for sick leave?,HR-LEA-002_Sick_Leave_Policy.md,1,0,555.7
+Hybrid+Semantic,"After returning from being sick for five days, what must I do within the next two days?",HR-LEA-002_Sick_Leave_Policy.md,1,1,513.3
+Hybrid+Semantic,"While on parental leave, how many Keeping in Touch days am I allowed to work?",HR-LEA-003_Parental_Leave_Policy.md,1,0,525.7
+Hybrid+Semantic,Does the company provide any leave for employees undergoing IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,3,522.5
+Hybrid+Semantic,How much leave can someone take after adopting a child?,HR-LEA-003_Parental_Leave_Policy.md,1,0,518.9
+Hybrid+Semantic,How long should hiring managers keep interview evaluation notes?,HR-POL-002_Recruitment_and_Selection.pdf,1,3,519.6
+Hybrid+Semantic,"Before hiring externally, how long must a vacancy be advertised to current employees?",HR-POL-002_Recruitment_and_Selection.pdf,1,1,518.1
+Hybrid+Semantic,"After someone verbally accepts a job offer, how quickly must the written contract be issued?",HR-POL-002_Recruitment_and_Selection.pdf,1,3,517.5
+Hybrid+Semantic,"At the beginning of the performance cycle, how many SMART objectives should each employee set?",HR-POL-003_Performance_Management.pdf,1,0,536.6
+Hybrid+Semantic,What happens if an employee receives a 'Needs Improvement' rating in two consecutive reviews?,HR-POL-003_Performance_Management.pdf,1,1,532.4
+Hybrid+Semantic,Where should shared passwords or account credentials be stored securely?,IT-PROC-001_Password_Management.docx,1,1,529.3
+Hybrid+Semantic,Who approves requests to install software that isn't normally permitted?,IT-PROC-002_Software_Installation.docx,1,0,462.4
+Hybrid+Semantic,How long does the security team have to evaluate software before giving approval?,IT-PROC-002_Software_Installation.docx,1,3,491.2
+Hybrid+Semantic,What are the stages the company follows when responding to a cybersecurity incident?,IT-PROC-003_Incident_Response.docx,1,2,547.9
+Hybrid+Semantic,"For a Priority 1 incident, how quickly must the root cause investigation be completed?",IT-PROC-003_Incident_Response.docx,1,1,462.0
+Hybrid+Semantic,"Even after a vendor contract ends, how long must confidential information continue to be protected?",VEN-CON-001_CloudHosting_MSA.pdf,1,4,480.6

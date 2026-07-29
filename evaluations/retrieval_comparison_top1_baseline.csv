@@ -1,0 +1,125 @@
+method,question,expected,correct_found,irrelevant_chunks,latency_ms
+Keyword,What is the dinner per diem allowance?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,1312.3
+Keyword,What class is permitted for international flights over 6 hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,104.0
+Keyword,How long do employees have to submit expenses after incurring them?,FIN-EXP-001_Travel_Expense_Guidelines.txt,0,1,408.5
+Keyword,Are credit card statements acceptable as receipts?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,178.2
+Keyword,What is the one-time home office setup allowance?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,83.0
+Keyword,What is the monthly internet stipend for remote workers?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,358.8
+Keyword,How many days of coworking space can be reimbursed per month?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,395.9
+Keyword,What is the annual training budget for individual contributors?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,507.5
+Keyword,What bonus is paid for passing an expert-level certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,428.6
+Keyword,What percentage must be repaid if an employee leaves within 6 months of completing training?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,205.0
+Keyword,How many days annual leave does an employee with 3 years service get?,HR-LEA-001_Annual_Leave_Policy.md,1,0,401.9
+Keyword,How far in advance must leave exceeding 10 consecutive days be requested?,HR-LEA-001_Annual_Leave_Policy.md,1,0,47.1
+Keyword,What is the maximum carry-over of annual leave?,HR-LEA-001_Annual_Leave_Policy.md,1,0,550.7
+Keyword,By what date must carried-over leave be used?,HR-LEA-001_Annual_Leave_Policy.md,1,0,185.2
+Keyword,How many separate absences trigger a formal absence review?,HR-LEA-002_Sick_Leave_Policy.md,1,0,59.6
+Keyword,When must a medical certificate be provided to HR?,HR-LEA-002_Sick_Leave_Policy.md,1,0,67.7
+Keyword,What must happen within 2 days after returning from 5 days absence?,HR-LEA-002_Sick_Leave_Policy.md,1,0,311.4
+Keyword,How many Keeping in Touch days can an employee on parental leave work?,HR-LEA-003_Parental_Leave_Policy.md,1,0,324.1
+Keyword,What leave is available for IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,0,467.8
+Keyword,What is the adoption leave entitlement?,HR-LEA-003_Parental_Leave_Policy.md,0,1,630.5
+Keyword,How long must interview notes be retained?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,541.7
+Keyword,How many days must a role be advertised internally before external posting?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,262.8
+Keyword,How soon must a written contract follow a verbal job offer?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,654.1
+Keyword,How many SMART goals must be agreed at the start of each year?,HR-POL-003_Performance_Management.pdf,1,0,1646.3
+Keyword,What happens when an employee is rated Needs Improvement twice in a row?,HR-POL-003_Performance_Management.pdf,1,0,47.6
+Keyword,Where must shared account credentials be stored?,IT-PROC-001_Password_Management.docx,1,0,384.7
+Keyword,Who must sign off on software installation exceptions?,IT-PROC-002_Software_Installation.docx,1,0,329.8
+Keyword,How long does the IT security team have to conduct a software review?,IT-PROC-002_Software_Installation.docx,1,0,3128.8
+Keyword,What are the five phases of the incident response process?,IT-PROC-003_Incident_Response.docx,1,0,141.3
+Keyword,Within how many business days must a P1 incident root cause analysis be completed?,IT-PROC-003_Incident_Response.docx,1,0,234.5
+Keyword,How long does the confidentiality obligation survive after contract termination?,VEN-CON-001_CloudHosting_MSA.pdf,1,0,186.0
+Vector,What is the dinner per diem allowance?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,3461.3
+Vector,What class is permitted for international flights over 6 hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,526.6
+Vector,How long do employees have to submit expenses after incurring them?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,710.6
+Vector,Are credit card statements acceptable as receipts?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,1352.8
+Vector,What is the one-time home office setup allowance?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,1170.3
+Vector,What is the monthly internet stipend for remote workers?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,1711.2
+Vector,How many days of coworking space can be reimbursed per month?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,411.1
+Vector,What is the annual training budget for individual contributors?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,752.3
+Vector,What bonus is paid for passing an expert-level certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,1276.1
+Vector,What percentage must be repaid if an employee leaves within 6 months of completing training?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,514.6
+Vector,How many days annual leave does an employee with 3 years service get?,HR-LEA-001_Annual_Leave_Policy.md,1,0,422.2
+Vector,How far in advance must leave exceeding 10 consecutive days be requested?,HR-LEA-001_Annual_Leave_Policy.md,1,0,529.6
+Vector,What is the maximum carry-over of annual leave?,HR-LEA-001_Annual_Leave_Policy.md,1,0,403.3
+Vector,By what date must carried-over leave be used?,HR-LEA-001_Annual_Leave_Policy.md,1,0,1214.5
+Vector,How many separate absences trigger a formal absence review?,HR-LEA-002_Sick_Leave_Policy.md,1,0,2446.4
+Vector,When must a medical certificate be provided to HR?,HR-LEA-002_Sick_Leave_Policy.md,1,0,1302.1
+Vector,What must happen within 2 days after returning from 5 days absence?,HR-LEA-002_Sick_Leave_Policy.md,1,0,4996.1
+Vector,How many Keeping in Touch days can an employee on parental leave work?,HR-LEA-003_Parental_Leave_Policy.md,1,0,2279.9
+Vector,What leave is available for IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,0,1047.1
+Vector,What is the adoption leave entitlement?,HR-LEA-003_Parental_Leave_Policy.md,1,0,821.1
+Vector,How long must interview notes be retained?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,2832.1
+Vector,How many days must a role be advertised internally before external posting?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,592.7
+Vector,How soon must a written contract follow a verbal job offer?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,701.6
+Vector,How many SMART goals must be agreed at the start of each year?,HR-POL-003_Performance_Management.pdf,1,0,1328.0
+Vector,What happens when an employee is rated Needs Improvement twice in a row?,HR-POL-003_Performance_Management.pdf,1,0,2159.6
+Vector,Where must shared account credentials be stored?,IT-PROC-001_Password_Management.docx,1,0,546.9
+Vector,Who must sign off on software installation exceptions?,IT-PROC-002_Software_Installation.docx,1,0,569.9
+Vector,How long does the IT security team have to conduct a software review?,IT-PROC-002_Software_Installation.docx,1,0,5891.6
+Vector,What are the five phases of the incident response process?,IT-PROC-003_Incident_Response.docx,1,0,3912.3
+Vector,Within how many business days must a P1 incident root cause analysis be completed?,IT-PROC-003_Incident_Response.docx,1,0,742.8
+Vector,How long does the confidentiality obligation survive after contract termination?,VEN-CON-001_CloudHosting_MSA.pdf,1,0,1058.2
+Hybrid,What is the dinner per diem allowance?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,589.5
+Hybrid,What class is permitted for international flights over 6 hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,586.6
+Hybrid,How long do employees have to submit expenses after incurring them?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,433.5
+Hybrid,Are credit card statements acceptable as receipts?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,738.4
+Hybrid,What is the one-time home office setup allowance?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,690.3
+Hybrid,What is the monthly internet stipend for remote workers?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,486.1
+Hybrid,How many days of coworking space can be reimbursed per month?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,672.4
+Hybrid,What is the annual training budget for individual contributors?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,629.2
+Hybrid,What bonus is paid for passing an expert-level certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,494.2
+Hybrid,What percentage must be repaid if an employee leaves within 6 months of completing training?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,488.0
+Hybrid,How many days annual leave does an employee with 3 years service get?,HR-LEA-001_Annual_Leave_Policy.md,1,0,621.8
+Hybrid,How far in advance must leave exceeding 10 consecutive days be requested?,HR-LEA-001_Annual_Leave_Policy.md,1,0,492.4
+Hybrid,What is the maximum carry-over of annual leave?,HR-LEA-001_Annual_Leave_Policy.md,1,0,503.3
+Hybrid,By what date must carried-over leave be used?,HR-LEA-001_Annual_Leave_Policy.md,1,0,425.1
+Hybrid,How many separate absences trigger a formal absence review?,HR-LEA-002_Sick_Leave_Policy.md,1,0,499.9
+Hybrid,When must a medical certificate be provided to HR?,HR-LEA-002_Sick_Leave_Policy.md,1,0,537.8
+Hybrid,What must happen within 2 days after returning from 5 days absence?,HR-LEA-002_Sick_Leave_Policy.md,1,0,419.7
+Hybrid,How many Keeping in Touch days can an employee on parental leave work?,HR-LEA-003_Parental_Leave_Policy.md,1,0,612.0
+Hybrid,What leave is available for IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,0,401.6
+Hybrid,What is the adoption leave entitlement?,HR-LEA-003_Parental_Leave_Policy.md,1,0,447.1
+Hybrid,How long must interview notes be retained?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,390.8
+Hybrid,How many days must a role be advertised internally before external posting?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,1935.8
+Hybrid,How soon must a written contract follow a verbal job offer?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,793.4
+Hybrid,How many SMART goals must be agreed at the start of each year?,HR-POL-003_Performance_Management.pdf,1,0,442.7
+Hybrid,What happens when an employee is rated Needs Improvement twice in a row?,HR-POL-003_Performance_Management.pdf,1,0,661.4
+Hybrid,Where must shared account credentials be stored?,IT-PROC-001_Password_Management.docx,1,0,513.1
+Hybrid,Who must sign off on software installation exceptions?,IT-PROC-002_Software_Installation.docx,1,0,614.2
+Hybrid,How long does the IT security team have to conduct a software review?,IT-PROC-002_Software_Installation.docx,1,0,543.3
+Hybrid,What are the five phases of the incident response process?,IT-PROC-003_Incident_Response.docx,1,0,358.3
+Hybrid,Within how many business days must a P1 incident root cause analysis be completed?,IT-PROC-003_Incident_Response.docx,1,0,439.6
+Hybrid,How long does the confidentiality obligation survive after contract termination?,VEN-CON-001_CloudHosting_MSA.pdf,1,0,414.4
+Hybrid+Semantic,What is the dinner per diem allowance?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,497.5
+Hybrid+Semantic,What class is permitted for international flights over 6 hours?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,605.0
+Hybrid+Semantic,How long do employees have to submit expenses after incurring them?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,522.2
+Hybrid+Semantic,Are credit card statements acceptable as receipts?,FIN-EXP-001_Travel_Expense_Guidelines.txt,1,0,436.1
+Hybrid+Semantic,What is the one-time home office setup allowance?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,436.7
+Hybrid+Semantic,What is the monthly internet stipend for remote workers?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,816.8
+Hybrid+Semantic,How many days of coworking space can be reimbursed per month?,FIN-EXP-002_Remote_Work_Expense_Guidelines.txt,1,0,1705.4
+Hybrid+Semantic,What is the annual training budget for individual contributors?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,1184.3
+Hybrid+Semantic,What bonus is paid for passing an expert-level certification?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,758.2
+Hybrid+Semantic,What percentage must be repaid if an employee leaves within 6 months of completing training?,FIN-EXP-003_Conference_and_Training_Expenses.txt,1,0,571.0
+Hybrid+Semantic,How many days annual leave does an employee with 3 years service get?,HR-LEA-001_Annual_Leave_Policy.md,0,1,486.2
+Hybrid+Semantic,How far in advance must leave exceeding 10 consecutive days be requested?,HR-LEA-001_Annual_Leave_Policy.md,1,0,516.2
+Hybrid+Semantic,What is the maximum carry-over of annual leave?,HR-LEA-001_Annual_Leave_Policy.md,1,0,513.9
+Hybrid+Semantic,By what date must carried-over leave be used?,HR-LEA-001_Annual_Leave_Policy.md,1,0,510.5
+Hybrid+Semantic,How many separate absences trigger a formal absence review?,HR-LEA-002_Sick_Leave_Policy.md,1,0,580.5
+Hybrid+Semantic,When must a medical certificate be provided to HR?,HR-LEA-002_Sick_Leave_Policy.md,1,0,491.7
+Hybrid+Semantic,What must happen within 2 days after returning from 5 days absence?,HR-LEA-002_Sick_Leave_Policy.md,1,0,489.9
+Hybrid+Semantic,How many Keeping in Touch days can an employee on parental leave work?,HR-LEA-003_Parental_Leave_Policy.md,1,0,521.7
+Hybrid+Semantic,What leave is available for IVF treatment?,HR-LEA-003_Parental_Leave_Policy.md,1,0,992.6
+Hybrid+Semantic,What is the adoption leave entitlement?,HR-LEA-003_Parental_Leave_Policy.md,1,0,452.1
+Hybrid+Semantic,How long must interview notes be retained?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,527.9
+Hybrid+Semantic,How many days must a role be advertised internally before external posting?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,508.2
+Hybrid+Semantic,How soon must a written contract follow a verbal job offer?,HR-POL-002_Recruitment_and_Selection.pdf,1,0,510.4
+Hybrid+Semantic,How many SMART goals must be agreed at the start of each year?,HR-POL-003_Performance_Management.pdf,1,0,528.0
+Hybrid+Semantic,What happens when an employee is rated Needs Improvement twice in a row?,HR-POL-003_Performance_Management.pdf,1,0,473.4
+Hybrid+Semantic,Where must shared account credentials be stored?,IT-PROC-001_Password_Management.docx,1,0,449.6
+Hybrid+Semantic,Who must sign off on software installation exceptions?,IT-PROC-002_Software_Installation.docx,1,0,521.7
+Hybrid+Semantic,How long does the IT security team have to conduct a software review?,IT-PROC-002_Software_Installation.docx,1,0,540.1
+Hybrid+Semantic,What are the five phases of the incident response process?,IT-PROC-003_Incident_Response.docx,1,0,494.6
+Hybrid+Semantic,Within how many business days must a P1 incident root cause analysis be completed?,IT-PROC-003_Incident_Response.docx,1,0,524.9
+Hybrid+Semantic,How long does the confidentiality obligation survive after contract termination?,VEN-CON-001_CloudHosting_MSA.pdf,1,0,508.7
