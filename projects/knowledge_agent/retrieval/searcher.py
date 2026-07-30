@@ -45,6 +45,15 @@ EMBEDDING_MODEL = os.environ["AZURE_EMBEDDING_DEPLOYMENT"]
 
 SELECT_FIELDS = ["id", "content", "filename", "department", "heading", "doc_type"]
 
+VALID_DEPARTMENTS = {
+    "hr": "Human Resources",
+    "human resources": "Human Resources",
+    "it": "Information Technology",
+    "information technology": "Information Technology",
+    "finance": "Finance",
+    "legal": "Legal",
+}
+
 # ─────────────────────────────────────────────────────────────────────────────
 # HybridSearcher
 # ─────────────────────────────────────────────────────────────────────────────
@@ -145,6 +154,89 @@ class HybridSearcher:
             semantic_configuration_name=SEMANTIC_CONFIG_NAME,
         )
         return self._to_dicts(results)
+
+    def build_filter_string(self, filters: dict) -> str | None: # day 19 
+        """
+        Build an OData filter string from a plain dict.
+
+        Supported keys:
+            department  : str  — "Finance", "Human Resources", "Information Technology", "Legal"
+            doc_type    : str  — "pdf", "docx", "txt", "md"
+            year        : int  — exact year match on effective_date
+            year_from   : int  — effective_date >= year-01-01
+            year_to     : int  — effective_date <= year-12-31
+
+        Text filters are CASE-SENSITIVE and EXACT-MATCH in Azure AI Search.
+        The values above must match what is stored in the index exactly.
+        """
+        if not filters:
+            return None
+
+        clauses = []
+
+        if "department" in filters:
+            # Normalise shorthand ("hr" → "Human Resources") so callers
+            # don't need to remember the exact stored string.
+            raw = filters["department"].strip()
+            dept = VALID_DEPARTMENTS.get(raw.lower(), raw)
+            dept = dept.replace("'", "''") # escape single quotes for OData
+            clauses.append(f"department eq '{dept}'")
+
+        if "doc_type" in filters:
+            dt = filters["doc_type"].strip().lower().replace("'","''") 
+            clauses.append(f"doc_type eq '{dt}'") 
+
+        if "year" in filters:
+            y = int(filters["year"])
+            clauses.append(
+                f"effective_date ge {y}-01-01T00:00:00Z "
+                f"and effective_date lt {y + 1}-01-01T00:00:00Z"
+            )
+        else:
+            if "year_from" in filters:
+                y = int(filters["year_from"]) 
+                clauses.append(f"effective_date ge {y}-01-01T00:00:00Z") 
+            if "year_to" in filters:
+                y = int(filters["year_to"]) 
+                clauses.append(f"effective_date lt {y + 1}-01-01T00:00:00Z")
+
+        return " and ".join(clauses) if clauses else None
+
+    def filtered_search(  # day 19
+            self, 
+            query: str, 
+            filters: dict | None = None,
+            k: int =5,
+            sort_by_date: bool = False) -> list[dict]:
+        """
+        Hybrid search with optional OData filter and optional date sort.
+
+        Args:
+            query       : natural language query
+            filters     : dict passed to build_filter_string()
+            k           : number of results to return
+            sort_by_date: if True, sorts results by effective_date descending
+                      (overrides relevance ranking — use only when recency matters)
+        """ 
+        filter_str = self.build_filter_string(filters) 
+        vector = self._embed(query)
+        vector_query = VectorizedQuery(
+            vector=vector,
+            k_nearest_neighbors=k,
+            fields="content_vector",
+        )
+        results = self.search_client.search(
+            search_text=query,
+            vector_queries=[vector_query],
+            top=k,
+            select=SELECT_FIELDS,
+            filter=filter_str,
+            order_by=["effective_date desc"] if sort_by_date else None,
+        )
+        return self._to_dicts(results)
+
+
+        
 
 
 
