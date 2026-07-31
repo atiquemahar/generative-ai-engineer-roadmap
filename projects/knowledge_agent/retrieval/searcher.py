@@ -43,7 +43,7 @@ EMBEDDING_MODEL = os.environ["AZURE_EMBEDDING_DEPLOYMENT"]
 
 
 
-SELECT_FIELDS = ["id", "content", "filename", "department", "heading", "doc_type"]
+SELECT_FIELDS = ["id", "content", "filename", "department", "heading", "doc_type", "page_number"]
 
 VALID_DEPARTMENTS = {
     "hr": "Human Resources",
@@ -61,14 +61,14 @@ VALID_DEPARTMENTS = {
 class HybridSearcher:
     def __init__(self,):
         self.openai_client = AzureOpenAI(
-            api_key=os.environ["AZURE_OPENAI_API_KEY"],
-            azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
-            api_version="2025-04-01-preview",
+        api_key=os.environ["AZURE_OPENAI_API_KEY"],
+        azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
+        api_version="2025-04-01-preview",
         )
         self.search_client = SearchClient(
-            endpoint=SEARCH_ENDPOINT,
-            index_name=INDEX_NAME,
-            credential=AzureKeyCredential(SEARCH_API_KEY),
+        endpoint=SEARCH_ENDPOINT,
+        index_name=INDEX_NAME,
+        credential=AzureKeyCredential(SEARCH_API_KEY)
         )
         
 

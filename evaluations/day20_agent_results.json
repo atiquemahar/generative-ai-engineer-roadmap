@@ -1,0 +1,754 @@
+[
+  {
+    "question": "What is the dinner per diem allowance for business travel?",
+    "is_answerable": true,
+    "answer": "Dinner per diem allowance is USD 60 (FIN-EXP-001 \u2014 Meals and Entertainment).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 2.5092
+      },
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 1.5307
+      },
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.4896
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 9044.5,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What hotel rate cap applies for international travel in developed countries?",
+    "is_answerable": true,
+    "answer": "USD 280 per night for International (developed) travel (per FIN-EXP-001 Travel Expense Guidelines).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 2.8054
+      },
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 1.5144
+      },
+      {
+        "document": "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "page": 5,
+        "section": "4. Support",
+        "department": "Legal",
+        "relevance_score": 1.3393
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 3984.0,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How many days in advance must international flights be booked?",
+    "is_answerable": true,
+    "answer": "International flights must be booked a maximum of 21 days in advance (FIN-EXP-001 Travel and Expense Guidelines \u2014 Air Travel / Maximum advance booking requirement).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "page": 0,
+        "section": "Novatech Enterprises",
+        "department": "Finance",
+        "relevance_score": 2.7947
+      },
+      {
+        "document": "HR-POL-002_Recruitment_and_Selection.pdf",
+        "page": 6,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.9748
+      },
+      {
+        "document": "HR-POL-003_Performance_Management.pdf",
+        "page": 2,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.608
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "page": 6,
+        "section": "",
+        "department": "Legal",
+        "relevance_score": 1.5229
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 5388.0,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How long does an employee have to submit an expense claim?",
+    "is_answerable": true,
+    "answer": "Expenses must be submitted within 30 calendar days of the expense being incurred (see EXPENSE SUBMISSION, FIN-EXP-001_Travel_Expense_Guidelines).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "page": 2,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 2.8096
+      },
+      {
+        "document": "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "page": 0,
+        "section": "Novatech Enterprises",
+        "department": "Finance",
+        "relevance_score": 2.3351
+      },
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 2,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 2.1085
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4512.3,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What is the one-time home office setup allowance?",
+    "is_answerable": true,
+    "answer": "The one-time home office setup allowance is USD 800 per eligible remote worker (see 'INITIAL SETUP ALLOWANCE' in FIN-EXP-002). It may cover external monitor(s); ergonomic keyboard and mouse; desk lamp; webcam (if not integrated); headset for calls; and a desk or office chair (chair reimbursed up to USD 400 of the total). Purchases must be made within 90 days of approval, receipts submitted via Concur, and items remain property of NovaTech.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "page": 0,
+        "section": "Novatech Enterprises",
+        "department": "Finance",
+        "relevance_score": 3.0939
+      },
+      {
+        "document": "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "page": 2,
+        "section": "1. Subscription Grant",
+        "department": "Legal",
+        "relevance_score": 1.7058
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "page": 2,
+        "section": "2. Term",
+        "department": "Legal",
+        "relevance_score": 1.6306
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 6846.5,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How much is the monthly internet stipend for remote workers?",
+    "is_answerable": true,
+    "answer": "USD 50 per month (monthly internet stipend for approved remote workers, per FIN-EXP-002 Remote Work Expense Guidelines).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 3.1988
+      },
+      {
+        "document": "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "page": 2,
+        "section": "1. Subscription Grant",
+        "department": "Legal",
+        "relevance_score": 2.0325
+      },
+      {
+        "document": "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "page": 2,
+        "section": "2. Fees",
+        "department": "Legal",
+        "relevance_score": 1.7923
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 6033.8,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What is the annual training budget for senior employees?",
+    "is_answerable": true,
+    "answer": "Senior / Lead employees have an annual professional development budget of USD 3,000 per year (FIN-EXP-003, 'ANNUAL TRAINING BUDGET').",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 0,
+        "section": "Novatech Enterprises",
+        "department": "Finance",
+        "relevance_score": 3.0471
+      },
+      {
+        "document": "HR-POL-003_Performance_Management.pdf",
+        "page": 5,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.5597
+      },
+      {
+        "document": "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "page": 2,
+        "section": "2. Fees",
+        "department": "Legal",
+        "relevance_score": 1.4336
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 5345.8,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What bonus is paid for passing an expert-level certification?",
+    "is_answerable": true,
+    "answer": "The Certification Reimbursement Bonus for Expert/Professional certifications is USD 1,000 (per FIN-EXP-003, \u201cCERTIFICATION REIMBURSEMENT BONUS\u201d); it is paid via payroll in the month after proof of certification is submitted to HR.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 2.867
+      },
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "page": 7,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.7313
+      },
+      {
+        "document": "HR-POL-003_Performance_Management.pdf",
+        "page": 5,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.7157
+      },
+      {
+        "document": "HR-POL-002_Recruitment_and_Selection.pdf",
+        "page": 6,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.5399
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4470.9,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How many external conferences can an employee attend per year?",
+    "is_answerable": true,
+    "answer": "Employees may attend up to 2 external conferences per year (per FIN-EXP-003 Conference and Training Expense Guidelines).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 3.067
+      },
+      {
+        "document": "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "page": 3,
+        "section": "2. Subscription Term And Fees",
+        "department": "Legal",
+        "relevance_score": 1.8182
+      },
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 1.6363
+      },
+      {
+        "document": "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "page": 0,
+        "section": "Novatech Enterprises",
+        "department": "Finance",
+        "relevance_score": 1.6108
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 5218.0,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How many days annual leave does an employee with 3 years service get?",
+    "is_answerable": true,
+    "answer": "23 days per year (HR-LEA-001_Annual_Leave_Policy.md \u2014 Entitlement)",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "HR-LEA-002_Sick_Leave_Policy.md",
+        "page": 2,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 2.5586
+      },
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "page": 1,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 2.2749
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4828.9,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What is the maximum carry-over of annual leave?",
+    "is_answerable": true,
+    "answer": "A maximum of 5 days of annual leave may be carried over into the following leave year (see section 4, Carry-Over).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 3.2917
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4328.1,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How many separate absences in 12 months trigger a formal absence review?",
+    "is_answerable": true,
+    "answer": "HR-LEA-002_Sick_Leave_Policy \u2014 8 or more separate absences in a rolling 12-month period.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "HR-LEA-002_Sick_Leave_Policy.md",
+        "page": 5,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 3.2399
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "page": 2,
+        "section": "2. Term",
+        "department": "Legal",
+        "relevance_score": 2.0107
+      },
+      {
+        "document": "HR-LEA-003_Parental_Leave_Policy.md",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.7292
+      },
+      {
+        "document": "HR-POL-003_Performance_Management.pdf",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.6384
+      },
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "page": 8,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.6044
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 3222.2,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How many Keeping in Touch days can an employee on parental leave work?",
+    "is_answerable": true,
+    "answer": "Employees on parental leave may work up to 10 Keeping in Touch (KIT) days (see Section 5: Keeping in Touch Days, HR-LEA-003 Parental Leave Policy).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "HR-LEA-003_Parental_Leave_Policy.md",
+        "page": 7,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 3.5448
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4503.9,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How long must structured interview notes be retained?",
+    "is_answerable": true,
+    "answer": "Structured interview notes must be retained for 12 months.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "HR-POL-002_Recruitment_and_Selection.pdf",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 3.2258
+      },
+      {
+        "document": "HR-POL-003_Performance_Management.pdf",
+        "page": 2,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 2.1194
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4195.5,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What happens to employees rated Needs Improvement for two consecutive reviews?",
+    "is_answerable": true,
+    "answer": "Employees rated Needs Improvement for two consecutive reviews are placed on a formal Performance Improvement Plan (PIP) lasting 60 to 90 days, with specific, measurable targets; failure to meet PIP targets may result in termination.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "HR-POL-003_Performance_Management.pdf",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 3.2272
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4707.5,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "Where must shared account credentials be stored?",
+    "is_answerable": true,
+    "answer": "Per IT-PROC-001_Password_Management (Section 5: Shared Accounts), shared account credentials must be stored exclusively in Keeper and access audited monthly.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "IT-PROC-001_Password_Management.docx",
+        "page": 5,
+        "section": "",
+        "department": "Information Technology",
+        "relevance_score": 3.4101
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "page": 5,
+        "section": "5. Data Protection",
+        "department": "Legal",
+        "relevance_score": 1.877
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4810.7,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "Who must approve software installation exceptions?",
+    "is_answerable": true,
+    "answer": "Exceptions must be approved by the CISO (CISO sign-off).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "IT-PROC-002_Software_Installation.docx",
+        "page": 5,
+        "section": "",
+        "department": "Information Technology",
+        "relevance_score": 2.4163
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4936.5,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What are the five phases of the incident response process?",
+    "is_answerable": true,
+    "answer": "Phase 1 \u2014 Detection & Triage; Phase 2 \u2014 Containment; Phase 3 \u2014 Eradication; Phase 4 \u2014 Recovery; Phase 5 \u2014 Post-Incident Review.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "IT-PROC-003_Incident_Response.docx",
+        "page": 3,
+        "section": "",
+        "department": "Information Technology",
+        "relevance_score": 2.8961
+      },
+      {
+        "document": "IT-PROC-001_Password_Management.docx",
+        "page": 6,
+        "section": "",
+        "department": "Information Technology",
+        "relevance_score": 1.8915
+      },
+      {
+        "document": "HR-LEA-002_Sick_Leave_Policy.md",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.838
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4380.2,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How long does the confidentiality obligation survive after contract termination?",
+    "is_answerable": true,
+    "answer": "The confidentiality obligation survives for 5 years after termination (VEN-CON-001_CloudHosting_MSA.pdf \u2014 Section 6. CONFIDENTIALITY).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "page": 7,
+        "section": "6. Confidentiality",
+        "department": "Legal",
+        "relevance_score": 3.0818
+      },
+      {
+        "document": "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "page": 6,
+        "section": "6. Confidentiality And Non-Solicitation",
+        "department": "Legal",
+        "relevance_score": 2.7564
+      },
+      {
+        "document": "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "page": 6,
+        "section": "5. Data Ownership",
+        "department": "Legal",
+        "relevance_score": 1.7363
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4405.3,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "How soon must subscriber data be exported after a termination request?",
+    "is_answerable": true,
+    "answer": "Provider will export Subscriber Data in CSV or JSON format within 30 days of the termination request (see 5. DATA OWNERSHIP).",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "page": 6,
+        "section": "5. Data Ownership",
+        "department": "Legal",
+        "relevance_score": 3.0152
+      },
+      {
+        "document": "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "page": 6,
+        "section": "6. Confidentiality And Non-Solicitation",
+        "department": "Legal",
+        "relevance_score": 1.7412
+      },
+      {
+        "document": "VEN-CON-001_CloudHosting_MSA.pdf",
+        "page": 7,
+        "section": "6. Confidentiality",
+        "department": "Legal",
+        "relevance_score": 1.7384
+      },
+      {
+        "document": "HR-LEA-001_Annual_Leave_Policy.md",
+        "page": 4,
+        "section": "",
+        "department": "Human Resources",
+        "relevance_score": 1.6711
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4753.3,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "Does the company offer a free gym membership?",
+    "is_answerable": false,
+    "answer": "This information is not available in the provided documents.",
+    "supported": false,
+    "confidence": "low",
+    "sources": [],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 5882.8,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "Does NovaTech have offices anywhere in Asia?",
+    "is_answerable": false,
+    "answer": "This information is not available in the provided documents.",
+    "supported": false,
+    "confidence": "low",
+    "sources": [],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 3439.2,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "What is the starting salary for a junior developer?",
+    "is_answerable": false,
+    "answer": "This information is not available in the provided documents.",
+    "supported": false,
+    "confidence": "low",
+    "sources": [],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 3632.1,
+    "pass": true,
+    "fabrication": false
+  },
+  {
+    "question": "Is there a company car or vehicle allowance policy?",
+    "is_answerable": false,
+    "answer": "No. The provided documents do not establish a company car or ongoing vehicle allowance policy. FIN-EXP-001 (Travel and Expense Guidelines) only addresses ground transport reimbursement: taxi/rideshare are reimbursed, personal car use is reimbursed at USD 0.67 per mile (2026 IRS rate), and car rental is permitted when economical.",
+    "supported": true,
+    "confidence": "high",
+    "sources": [
+      {
+        "document": "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "page": 2,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 2.0923
+      },
+      {
+        "document": "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "page": 2,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 1.608
+      },
+      {
+        "document": "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "page": 1,
+        "section": "",
+        "department": "Finance",
+        "relevance_score": 1.5746
+      }
+    ],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 5532.3,
+    "pass": false,
+    "fabrication": false
+  },
+  {
+    "question": "What is the CEO's name and contact email?",
+    "is_answerable": false,
+    "answer": "This information is not available in the provided documents.",
+    "supported": false,
+    "confidence": "high",
+    "sources": [],
+    "retrieval_method": "hybrid_semantic",
+    "chunks_retrieved": 5,
+    "latency_ms": 4491.5,
+    "pass": true,
+    "fabrication": false
+  }
+]
