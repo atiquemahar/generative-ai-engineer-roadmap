@@ -1,0 +1,1196 @@
+{
+  "metrics": {
+    "retrieval_hit_rate": 0.9268,
+    "full_recall_rate": 0.9268,
+    "refusal_accuracy": 0.9,
+    "support_accuracy": 0.9756,
+    "overall_pass_rate": 0.9216,
+    "avg_latency_ms": 5442.1,
+    "retrieval_hit_by_category": {
+      "direct": 1.0,
+      "multi_document": 0.8,
+      "ambiguous": 0.8
+    },
+    "thresholds": {
+      "retrieval_hit_rate_target": 0.7,
+      "retrieval_hit_rate_passed": true,
+      "refusal_accuracy_target": 0.8,
+      "refusal_accuracy_passed": true
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "question": "What is the breakfast per diem allowance for business travel?",
+      "expected_answer": "USD 20 per meal",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The breakfast per diem allowance is USD 20 per meal (FIN-EXP-001 Travel Expense Guidelines \u2014 MEALS AND ENTERTAINMENT).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "VEN-CON-001_CloudHosting_MSA.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 11200.1,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 2,
+      "question": "What is the daily total meal per diem cap?",
+      "expected_answer": "USD 110 per day total (breakfast USD 20, lunch USD 30, dinner USD 60)",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The daily total meal per diem cap is USD 110.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "HR-LEA-003_Parental_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3626.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 3,
+      "question": "What is the hotel rate cap for domestic travel in major cities?",
+      "expected_answer": "USD 220 per night excluding taxes and fees",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "USD 220 per night for domestic travel in major cities (per FIN-EXP-001 Travel and Expense Guidelines).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3628.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 4,
+      "question": "What is the IRS mileage reimbursement rate for personal car use?",
+      "expected_answer": "USD 0.67 per mile (2026 IRS rate)",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The IRS mileage reimbursement rate for personal car use is USD 0.67 per mile (2026 IRS rate).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "HR-LEA-001_Annual_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4197.2,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 5,
+      "question": "How many days in advance must domestic flights be booked?",
+      "expected_answer": "14 days in advance for domestic flights",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "According to FIN-EXP-001 Travel and Expense Guidelines, the maximum advance booking requirement for domestic flights is 14 days.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "HR-POL-003_Performance_Management.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3176.2,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 6,
+      "question": "How many days per week must an employee work remotely to qualify for the home office setup allowance?",
+      "expected_answer": "3 or more days per week under an approved remote work arrangement",
+      "expected_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Employees must work remotely 3 or more days per week to qualify for the home office setup allowance (FIN-EXP-002).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "VEN-CON-001_CloudHosting_MSA.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3389.2,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 7,
+      "question": "How many days does an employee have to purchase items under the home office setup allowance?",
+      "expected_answer": "90 days from the date of approval",
+      "expected_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Employees must purchase items within 90 days of approval (see INITIAL SETUP ALLOWANCE in FIN-EXP-002).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4599.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 8,
+      "question": "What is the maximum coworking space reimbursement per day and per month?",
+      "expected_answer": "USD 40 per day, maximum 8 days per month, subject to manager approval",
+      "expected_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Ad-hoc coworking is reimbursable up to USD 40 per day, with a maximum of 8 days per month (subject to manager approval).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 5946.4,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 9,
+      "question": "What is the annual training budget for managers?",
+      "expected_answer": "USD 4,000 per year",
+      "expected_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The annual training budget for managers is USD 4,000 per year.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "VEN-CON-003_Professional_Services_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3889.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 10,
+      "question": "What is the certification reimbursement bonus for an associate-level certification?",
+      "expected_answer": "USD 500, paid via payroll in the month after proof of certification is submitted to HR",
+      "expected_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The certification reimbursement bonus for an associate-level certification is USD 500 (a one-time bonus paid via payroll in the month after proof of certification is submitted to HR).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "HR-POL-003_Performance_Management.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 5326.9,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 11,
+      "question": "What percentage of training costs must be repaid if an employee leaves within 6 months of completing training?",
+      "expected_answer": "100% repayment if departing within 6 months of completing training costing over USD 1,000",
+      "expected_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "100% repayment. (FIN-EXP-003, Repayment section: Depart within 6 months: 100% repayment.)",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "HR-LEA-003_Parental_Leave_Policy.md",
+        "VEN-CON-003_Professional_Services_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4265.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 12,
+      "question": "How many days annual leave does an employee with over 10 years of service receive?",
+      "expected_answer": "28 days per year",
+      "expected_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "An employee with over 10 years of service is entitled to 28 days of annual leave per year (HR-LEA-001_Annual_Leave_Policy.md, Entitlement).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md",
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4858.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 13,
+      "question": "What is the minimum advance notice required for booking 6 to 10 days of annual leave?",
+      "expected_answer": "4 weeks notice",
+      "expected_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Minimum advance notice required is 4 weeks for booking 6\u201310 days of annual leave (HR-LEA-001 Annual Leave Policy, section 3: Booking Leave).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md",
+        "HR-LEA-002_Sick_Leave_Policy.md",
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3792.4,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 14,
+      "question": "Within how many days must a medical certificate be submitted to HR after returning from sick leave?",
+      "expected_answer": "Within 5 days of returning to work",
+      "expected_sources": [
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "A medical certificate must be provided to HR within 5 days of returning to work (for absences of more than 3 consecutive days), per Reporting Absence, HR-LEA-002_Sick_Leave_Policy.md.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4393.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 15,
+      "question": "What is the maximum duration of a Performance Improvement Plan?",
+      "expected_answer": "90 days (PIPs last 60 to 90 days)",
+      "expected_sources": [
+        "HR-POL-003_Performance_Management.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The maximum duration of a Performance Improvement Plan is 90 days.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-POL-003_Performance_Management.pdf",
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3685.5,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 16,
+      "question": "How many interviewers must be on a structured interview panel?",
+      "expected_answer": "At least two interviewers",
+      "expected_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Interviews must be conducted by a panel of at least two interviewers (HR-POL-002, Section 5: Interview Process).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "HR-POL-003_Performance_Management.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4508.2,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 17,
+      "question": "When does mandatory compliance training occur during the NovaTech onboarding programme?",
+      "expected_answer": "Weeks 1 and 4 of the 90-day onboarding programme",
+      "expected_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Mandatory compliance training occurs in weeks 1 and 4 of the 90-day onboarding programme (HR-POL-002, section 7: Offer and Onboarding).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "HR-LEA-002_Sick_Leave_Policy.md",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "IT-PROC-002_Software_Installation.docx"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3890.4,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 18,
+      "question": "How often must shared account access be audited under the password management policy?",
+      "expected_answer": "Monthly",
+      "expected_sources": [
+        "IT-PROC-001_Password_Management.docx"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Under IT-PROC-001 Password Management (Section 5. Shared Accounts), shared account access must be audited monthly.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "IT-PROC-001_Password_Management.docx",
+        "IT-PROC-003_Incident_Response.docx"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4919.9,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 19,
+      "question": "How long must systems be monitored after returning to production following a security incident?",
+      "expected_answer": "72 hours",
+      "expected_sources": [
+        "IT-PROC-003_Incident_Response.docx"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Systems must be monitored closely for 72 hours after returning to production (Phase 4 \u2014 Recovery, IT-PROC-003_Incident_Response.docx).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "IT-PROC-003_Incident_Response.docx",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "IT-PROC-001_Password_Management.docx",
+        "VEN-CON-001_CloudHosting_MSA.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3380.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 20,
+      "question": "In what file formats can subscriber data be exported upon contract termination?",
+      "expected_answer": "CSV or JSON format, within 30 days of the termination request",
+      "expected_sources": [
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Subscriber data can be exported in CSV or JSON format (per 5. Data Ownership).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "VEN-CON-001_CloudHosting_MSA.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3283.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 21,
+      "question": "Within how many days must vendor data be deleted from provider systems after termination?",
+      "expected_answer": "60 days after the termination request",
+      "expected_sources": [
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Vendor data must be deleted from Provider systems within 60 days of termination.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "IT-PROC-002_Software_Installation.docx",
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-003_Professional_Services_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3486.1,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 22,
+      "question": "What is the maximum annual price increase permitted under the cloud hosting contract?",
+      "expected_answer": "CPI plus 2%, with 60 days notice required",
+      "expected_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The contract caps annual price increases at CPI + 2%, with 60 days' notice (see 3. Fees And Payment in VEN-CON-001_CloudHosting_MSA.pdf).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3913.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 23,
+      "question": "How many consecutive days of absence trigger the requirement for a Return to Work meeting?",
+      "expected_answer": "5 or more consecutive days; the meeting must occur within 2 days of returning",
+      "expected_sources": [
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "The requirement is triggered after 5 or more consecutive days of absence (HR-LEA-002_Sick_Leave_Policy, Section 4: Return to Work).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-002_Sick_Leave_Policy.md",
+        "HR-LEA-001_Annual_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4088.1,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 24,
+      "question": "How many days of paid leave are available following pregnancy loss?",
+      "expected_answer": "Up to 10 days paid leave following pregnancy loss at any stage",
+      "expected_sources": [
+        "HR-LEA-003_Parental_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Up to 10 days paid leave following pregnancy loss (HR-LEA-003_Parental_Leave_Policy.md, Section 7: Additional Support).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-003_Parental_Leave_Policy.md",
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3832.1,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 25,
+      "question": "How many days of paid leave are available per cycle of IVF or fertility treatment?",
+      "expected_answer": "Up to 5 days paid leave per cycle of IVF or equivalent treatment",
+      "expected_sources": [
+        "HR-LEA-003_Parental_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Up to 5 days paid leave per cycle of IVF or equivalent treatment (Section 7, Additional Support of HR-LEA-003_Parental_Leave_Policy.md).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-003_Parental_Leave_Policy.md",
+        "HR-LEA-001_Annual_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 5113.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 26,
+      "question": "What are the expense rules for attending an overseas conference, covering both travel and registration costs?",
+      "expected_answer": "Travel (FIN-EXP-001): business class permitted for international flights over 6 hours with VP approval; economy otherwise. Hotel up to USD 280/night (developed countries). Training (FIN-EXP-003): conference registration counts toward the annual budget. Employees may attend up to 2 external conferences per year. Conferences with registration fees over USD 1,000 require a written summary shared with the team within 30 days of return.",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Registration: Conference registration fees are eligible under FIN-EXP-003 and count against your annual training budget (IC $2,000; Senior/Lead $3,000; Managers $4,000; Directors case-by-case). Employees may attend up to 2 external conferences/year. Training expenses >USD 500 require manager approval; >USD 1,500 require manager + department head. Registrations >USD 1,000 require a written summary/presentation within 30 days. Travel: Conference travel (flights, hotel) is governed by FIN-EXP-001 and does NOT count toward the training budget. Book via the NovaTech Travel Portal. International hotel caps: Developed USD 280/night, Emerging USD 200/night (rates above caps need VP approval). Economy is standard; business class allowed for international >6 hrs with VP+ approval. Per diems: B $20, L $30, D $60 (daily total $110). Receipts required for items >USD 25; submit expenses via Concur within 30 days. Non-reimbursable items listed in FIN-EXP-001 apply.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 10134.5,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 27,
+      "question": "If a role requires specialist software and training on that software, what approval processes apply?",
+      "expected_answer": "Software (IT-PROC-002): must be requested through IT; IT Security team reviews within 5 business days; CISO sign-off required for exceptions not in the Approved Software Catalogue. Training (FIN-EXP-003): expenses above USD 500 require manager approval before purchase; above USD 1,500 require manager and department head approval.",
+      "expected_sources": [
+        "IT-PROC-002_Software_Installation.docx",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Software: If the specialist software is in the Approved Software Catalogue (ASC) it can be installed via the Self\u2011Service Portal without additional approval (IT-PROC-002 \u00a72). If not listed, submit a Software Request Form (SRF) via the IT Service Portal including business justification, vendor/version, cost/licensing, data classification and obtain manager approval (IT-PROC-002 \u00a73). IT Security will conduct a security review within 5 business days; software that processes Confidential or Restricted data requires a full vendor security assessment before approval. Legal review is required for non\u2011standard licensing terms (IT-PROC-002 \u00a74). Training: Per FIN-EXP-003, training expenses > USD 500 require manager approval; > USD 1,500 require manager and department head approval.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "IT-PROC-002_Software_Installation.docx",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 5664.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 28,
+      "question": "What annual leave and sick leave policies apply during an employee's notice period?",
+      "expected_answer": "Annual leave (HR-LEA-001): employees may take accrued leave during notice, subject to manager agreement; NovaTech may require outstanding leave to be taken during the notice period. Sick leave (HR-LEA-002): standard policies continue to apply; absence must be reported before the working day starts; medical certificate required for absences over 3 consecutive days.",
+      "expected_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md",
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Annual leave: Per HR-LEA-001 (section \u201cLeave During Notice Period\u201d), employees serving notice may take any accrued but untaken annual leave during the notice period subject to manager agreement, and NovaTech may require employees to take outstanding leave during their notice. Annual leave must be requested via Workday following the Booking Leave notice periods (2 weeks for 1\u20135 days; 4 weeks for 6\u201310 days; 8 weeks for >10 consecutive days) and managers must respond within 5 business days (HR-LEA-001 sections 3 and 5). Excessive-balance rules may also require managers to direct leave (HR-LEA-001 section 8). Sick leave: HR-LEA-002 (section \u201cSick Leave Entitlement\u201d) lists entitlements (0\u20131 yr: 10 days; 1\u20133 yrs: 15 days; 3+ yrs: 20 days; extended sick at 60% for further 90 days with medical certification). The documents do not specify any special sick-leave rules specific to the notice period.",
+      "actual_supported": true,
+      "actual_confidence": "medium",
+      "actual_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md",
+        "HR-LEA-002_Sick_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 10923.5,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 29,
+      "question": "What data protection obligations apply to vendors and what happens to customer data when a contract ends?",
+      "expected_answer": "Vendor acts as Data Processor under GDPR; customer data must be stored in EU-West data centres (VEN-CON-001). On termination: subscriber data exported within 30 days in CSV or JSON; deleted from provider systems within 60 days (VEN-CON-002). Subscriber owns all data generated on the platform.",
+      "expected_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Vendors are designated as Data Processors under GDPR (VEN-CON-001, 5. Data Protection) and must comply with the incorporated Data Processing Agreement DPA-001-2026; customer data is required to be stored in EU\u2011West data centres (VEN-CON-001, 5). Incident procedures require notifying the Data Protection Officer within 1 hour if personal data is involved (IT-PROC-003, 4. Communication). Upon contract termination the Subscriber/Customer retains ownership of their data (VEN-CON-002, 5. Data Ownership). The Provider must export Subscriber Data in CSV or JSON within 30 days of a termination request and must delete the data from Provider systems within 60 days; the Provider may retain and use anonymised, aggregated data for product improvement (VEN-CON-002, 5). Confidentiality obligations survive termination for 5 years (VEN-CON-001, 6. Confidentiality).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "IT-PROC-003_Incident_Response.docx",
+        "VEN-CON-003_Professional_Services_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 7188.8,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 30,
+      "question": "As a new hire joining in January, what annual leave do I accrue and what performance goals must I set?",
+      "expected_answer": "Annual leave (HR-LEA-001): 20 days per year for the first 2 years; part-time employees receive leave on a pro-rata basis. Performance goals (HR-POL-003): 3 to 5 SMART goals must be agreed with your manager within 30 days of joining, documented in the HRIS system; at least one goal must align to the team's strategic objectives.",
+      "expected_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md",
+        "HR-POL-003_Performance_Management.pdf"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Annual leave: Per HR-LEA-001 (Annual Leave Policy) the leave year runs 1 January\u201331 December. New employees begin accruing leave from their first day and leave is accrued monthly. Permanent full\u2011time employees with 0\u20132 years\u2019 service are entitled to 20 days per year (part\u2011time is pro\u2011rata; contractors/fixed\u2011term receive statutory minimum).\nPerformance goals: Per HR\u2011POL\u2011003 (Performance Management) you and your manager must agree on 3\u20135 SMART goals within 30 days of joining (or within the first 30 days of the calendar year). Goals must be recorded in the HRIS and at least one must align to the team\u2019s strategic objectives.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-LEA-001_Annual_Leave_Policy.md",
+        "HR-POL-003_Performance_Management.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 7631.2,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 31,
+      "question": "If credentials are compromised during a security incident, what password and incident response procedures apply?",
+      "expected_answer": "Incident response Phase 3 \u2014 Eradication includes resetting compromised credentials (IT-PROC-003). Shared accounts must store credentials exclusively in Keeper and are audited monthly (IT-PROC-001). Phase 4 \u2014 Recovery requires restoring from clean backups and monitoring closely for 72 hours. Post-incident review is mandatory for P1 and P2 incidents with RCA within 5 business days.",
+      "expected_sources": [
+        "IT-PROC-001_Password_Management.docx",
+        "IT-PROC-003_Incident_Response.docx"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Per IT-PROC-001 (Password Management): report any suspected password compromise immediately to security@novatech.com or the IT Helpdesk (ext. 4400). Passwords for affected accounts will be reset within 1 hour of a confirmed breach. Automated controls enforce password complexity and expiry via Active Directory Group Policy; violations may result in account suspension and disciplinary action per HR-POL-001. Per IT-PROC-003 (Incident Response): follow the incident phases \u2014 Phase 1 (detection & triage), Phase 2 (containment: e.g., isolate systems, block traffic, disable accounts), Phase 3 (eradication: remove root cause, patch, reset compromised credentials), Phase 4 (recovery: restore from clean backups, verify integrity, monitor closely for 72 hours), and Phase 5 (post-incident review; mandatory for P1/P2 with root cause analysis within 5 business days).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "IT-PROC-001_Password_Management.docx",
+        "IT-PROC-003_Incident_Response.docx"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 8399.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 32,
+      "question": "What are the onboarding requirements from both HR and IT perspectives for a new employee?",
+      "expected_answer": "HR (HR-POL-002): 90-day onboarding programme with mandatory compliance training in weeks 1 and 4; written contract within 5 business days of verbal offer. IT (IT-PROC-002): employees have no local administrator rights; software deployed centrally via Intune or Jamf; approved software available for self-install via the Self-Service Portal.",
+      "expected_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "IT-PROC-002_Software_Installation.docx"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "HR requirements (from HR-POL-002 \u201cOffer and Onboarding\u201d and HR-POL-003 \u201cGoal Setting\u201d): verbal offers must be followed by a written contract within 5 business days; a 90-day onboarding programme is required with mandatory compliance training in weeks 1 and 4; managers and new employees must agree on 3\u20135 SMART goals within 30 days of joining, document them in the HRIS, and include at least one goal aligned to the team\u2019s strategic objectives. IT requirements (from HR-POL-001 \u201cCode of Conduct\u201d): employees must use company assets (physical and digital) only for legitimate business purposes and must not disclose confidential company information to unauthorized third parties; suspected violations must be reported to HR or via the anonymous ethics hotline. No other IT-specific onboarding/provisioning steps are provided in the supplied documents.",
+      "actual_supported": true,
+      "actual_confidence": "medium",
+      "actual_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "HR-POL-003_Performance_Management.pdf",
+        "HR-POL-001_Code_of_Conduct.pdf",
+        "HR-LEA-003_Parental_Leave_Policy.md"
+      ],
+      "retrieval_hit": false,
+      "full_recall": false,
+      "support_correct": true,
+      "passed": false,
+      "latency_ms": 9885.5,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 33,
+      "question": "What recruitment steps are required before a written offer is made, and what goal-setting must follow in the first month?",
+      "expected_answer": "Recruitment (HR-POL-002): advertise internally for minimum 5 business days; structured panel interview with at least 2 interviewers; notes retained for 12 months; written contract within 5 business days of verbal offer. First month (HR-POL-003): 3-5 SMART goals agreed within 30 days of joining, documented in HRIS; at least one must align to team strategic objectives.",
+      "expected_sources": [
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "HR-POL-003_Performance_Management.pdf"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Recruitment steps before a written offer (per HR-POL-002): Vacancy Approval \u2014 department head and Finance must approve all new/replacement vacancies before advertising, and Talent Acquisition assigns a recruiter within 2 business days. Interview Process \u2014 interviews by a panel of at least two interviewers using structured, identical questions for all candidates; interview notes retained 12 months. Background Checks \u2014 conditional offers are subject to satisfactory checks: right-to-work verification, references from two previous employers, and criminal record checks for certain roles. Offer timing (Offer and Onboarding) \u2014 verbal offers must be followed by a written contract within 5 business days. Goal-setting in the first month (HR-POL-003, \"Goal Setting\"): Managers and employees must agree on 3\u20135 SMART goals within 30 days of joining (or the calendar year), document them in the HRIS, and include at least one goal aligned to the team's strategic objectives.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-POL-003_Performance_Management.pdf",
+        "HR-POL-002_Recruitment_and_Selection.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 8456.0,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 34,
+      "question": "If I work remotely and need software for my job, what IT and expense procedures apply?",
+      "expected_answer": "Software subscriptions are NOT reimbursable as personal purchases under FIN-EXP-002; all software must be requisitioned through IT via IT-PROC-002. Employees should check with IT before purchasing an individual subscription that may already be covered as a team licence. Approved software in the catalogue can be self-installed via the Self-Service Portal.",
+      "expected_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "IT-PROC-002_Software_Installation.docx"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Per FIN-EXP-002, you must have a signed Remote Work Agreement before submitting remote-work expenses. Software subscriptions are NOT reimbursable as personal purchases; all software must be requisitioned through IT via IT-PROC-002. IT-PROC-002 governs installation of all software on company-owned and personally\u2011owned devices used for company work (applies to Windows, macOS, Linux, iOS, Android). Also note FIN-EXP-003 states team-level subscriptions are purchased centrally by IT and do not count against individual budgets.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "IT-PROC-002_Software_Installation.docx"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 8393.8,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 35,
+      "question": "What confidentiality and data obligations remain after a vendor contract ends?",
+      "expected_answer": "Confidentiality: both parties must maintain confidentiality for 5 years post-termination (VEN-CON-001). Data: subscriber data exported within 30 days in CSV or JSON format; deleted from provider systems within 60 days of the termination request (VEN-CON-002).",
+      "expected_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "expected_supported": true,
+      "category": "multi_document",
+      "actual_answer": "Confidentiality: VEN-CON-001 (MSA) requires both parties to keep each other's Confidential Information confidential and not disclose to third parties without prior written consent; this obligation survives termination for 5 years. VEN-CON-003 (Professional Services) requires the Consultant to keep Client information confidential (no survival period shown in the excerpt) and contains a reciprocal non\u2011solicit that survives for 12 months after termination. Data obligations: VEN-CON-001 states the Vendor acts as a GDPR Data Processor and incorporates DPA-001-2026; customer data must be stored in EU-West unless Customer provides written consent for alternative regions, and must be encrypted in transit (TLS 1.3) and at rest (AES-256). The excerpts do not specify a post-termination survival period for the data protection/DPA obligations.",
+      "actual_supported": true,
+      "actual_confidence": "medium",
+      "actual_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "HR-POL-001_Code_of_Conduct.pdf"
+      ],
+      "retrieval_hit": false,
+      "full_recall": false,
+      "support_correct": true,
+      "passed": false,
+      "latency_ms": 12498.4,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 36,
+      "question": "What is the maximum I can spend on a meal during a business trip?",
+      "expected_answer": "Depends on context. For personal meals, the dinner per diem cap is USD 60. For client entertainment, amounts above USD 150 per person require VP approval, implying higher amounts are permitted with approval. Alcohol is only claimable as part of client entertainment, not on internal trips.",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "ambiguous",
+      "ambiguity_note": "Per diem dinner cap vs client entertainment limit \u2014 two valid interpretations depending on whether the meal is solo or with clients",
+      "actual_answer": "Per FIN-EXP-001 (MEALS AND ENTERTAINMENT): Breakfast max USD 20, Lunch max USD 30, Dinner max USD 60. Daily total cap USD 110. Receipts are required for individual meal expenses above USD 25.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4816.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 37,
+      "question": "When do I need manager or VP approval for expenses?",
+      "expected_answer": "Travel (FIN-EXP-001): VP approval for business class on international flights over 6 hours; VP approval for client entertainment over USD 150 per person; hotel rates above caps require VP approval prior to booking. Training (FIN-EXP-003): manager approval for training expenses above USD 500; both manager and department head for expenses above USD 1,500.",
+      "expected_sources": [
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt",
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt"
+      ],
+      "expected_supported": true,
+      "category": "ambiguous",
+      "ambiguity_note": "Two separate expense policies define different approval thresholds for different expense types",
+      "actual_answer": "Manager approval is required: \u2022 Training expenses above USD 500 before purchase (FIN-EXP-003). \u2022 Expenses above USD 1,500 require both manager and department head approval (FIN-EXP-003). \u2022 Remote equipment replacement requests are subject to manager (and Finance) approval (FIN-EXP-002). \u2022 Ad-hoc coworking reimbursements are subject to manager approval (FIN-EXP-002). VP (or above) approval is required: \u2022 Any travel/nightly rates above the policy caps require VP approval prior to booking (FIN-EXP-001). \u2022 Client entertainment expenses above USD 150 per person require VP approval and documented attendees, purpose, and outcome (FIN-EXP-001). \u2022 Business class for international flights over 6 hours requires VP or above approval (FIN-EXP-001).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-003_Conference_and_Training_Expenses.txt",
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 7425.8,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 38,
+      "question": "Can I work while on leave?",
+      "expected_answer": "Depends on leave type. Employees on parental leave may work up to 10 Keeping in Touch (KIT) days with line manager agreement, paid at normal daily rate in addition to parental pay. No general provision for working during annual leave or sick leave is stated in the policies.",
+      "expected_sources": [
+        "HR-LEA-003_Parental_Leave_Policy.md"
+      ],
+      "expected_supported": true,
+      "category": "ambiguous",
+      "ambiguity_note": "KIT days apply to parental leave only; the question does not specify leave type, making the answer context-dependent",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "high",
+      "actual_sources": [],
+      "retrieval_hit": false,
+      "full_recall": false,
+      "support_correct": false,
+      "passed": false,
+      "latency_ms": 4320.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 39,
+      "question": "What is the maximum I can spend on home office equipment?",
+      "expected_answer": "The one-time home office setup allowance is USD 800 total. Within that amount, a desk or office chair is specifically capped at USD 400. Items must be purchased within 90 days of approval and remain NovaTech property upon departure.",
+      "expected_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"
+      ],
+      "expected_supported": true,
+      "category": "ambiguous",
+      "ambiguity_note": "USD 800 total vs USD 400 cap for desk/chair \u2014 the answer depends on which item is being purchased",
+      "actual_answer": "Per FIN-EXP-002 (Remote Work Equipment and Expense Guidelines) the one-time home office setup allowance is USD 800. Within that allowance a desk or office chair may be charged up to USD 400 of the total. Purchases must be made within 90 days of approval, submitted via Concur with receipts, and items remain company property.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf",
+        "FIN-EXP-001_Travel_Expense_Guidelines.txt"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 5464.2,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 40,
+      "question": "How long after a contract ends do obligations remain?",
+      "expected_answer": "Different obligations have different durations: subscriber data must be exported within 30 days and deleted within 60 days of the termination request. Confidentiality obligations survive for 5 years post-termination. Annual price increase notices require 60 days lead time before any increase takes effect.",
+      "expected_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "expected_supported": true,
+      "category": "ambiguous",
+      "ambiguity_note": "Different post-termination obligations have different timelines \u2014 the answer depends on which obligation is being asked about",
+      "actual_answer": "Confidentiality obligations survive termination for 5 years (VEN-CON-001_CloudHosting_MSA.pdf, Section 6).",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "VEN-CON-001_CloudHosting_MSA.pdf",
+        "VEN-CON-003_Professional_Services_Agreement.pdf",
+        "HR-POL-002_Recruitment_and_Selection.pdf",
+        "VEN-CON-002_SaaS_Subscription_Agreement.pdf"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4109.8,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 41,
+      "question": "Does NovaTech offer a sabbatical leave programme?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "high",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 6546.8,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 42,
+      "question": "What are the company's flextime or flexible working hours arrangements?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "The provided documents do not define specific flextime hours. They state that requests to return on a flexible or part\u2011time basis are considered under the Flexible Working Policy (HR\u2011FLX\u2011001). Separately, NovaTech supports a hybrid work model (FIN\u2011EXP\u2011002) with formal Remote Work Agreements required for remote-work benefits (e.g., equipment allowance, USD 50 monthly internet stipend for approved remote workers; eligibility begins at 3+ remote days/week). For concrete flextime arrangements, see HR\u2011FLX\u2011001.",
+      "actual_supported": true,
+      "actual_confidence": "medium",
+      "actual_sources": [
+        "HR-LEA-003_Parental_Leave_Policy.md",
+        "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt",
+        "HR-LEA-001_Annual_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": false,
+      "passed": false,
+      "latency_ms": 8506.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 43,
+      "question": "What are the overtime pay rates for employees who work beyond standard hours?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "low",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4610.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 44,
+      "question": "Is there a pension or retirement contribution scheme at NovaTech?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "low",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4456.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 45,
+      "question": "What is the standard probationary period for new employees?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "high",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3736.3,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 46,
+      "question": "Is there a bereavement leave policy for the death of a family member?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "low",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4308.5,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 47,
+      "question": "Does NovaTech provide visa or work permit sponsorship for international hires?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "low",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3650.0,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 48,
+      "question": "What is NovaTech's social media policy for employees?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [
+        "HR-POL-001_Code_of_Conduct.pdf"
+      ],
+      "expected_supported": true,
+      "category": "direct",
+      "actual_answer": "Per the Code of Conduct (Section 4), employees must not post content that misrepresents NovaTech, discloses confidential information, or brings the company into disrepute. Personal opinions shared online must be clearly stated as such and must not be attributed to NovaTech. The Code of Conduct (Section 2) applies to all employees, directors, consultants, and third\u2011party contractors, and violations may result in disciplinary action up to and including termination of employment.",
+      "actual_supported": true,
+      "actual_confidence": "high",
+      "actual_sources": [
+        "HR-POL-001_Code_of_Conduct.pdf",
+        "HR-LEA-002_Sick_Leave_Policy.md",
+        "HR-LEA-003_Parental_Leave_Policy.md"
+      ],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4446.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 49,
+      "question": "Are there post-employment restrictions preventing employees from working for competitors?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "high",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3446.7,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 50,
+      "question": "What equity compensation or employee share option plan does NovaTech offer?",
+      "expected_answer": "This information is not available in the provided documents.",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "low",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 4245.6,
+      "chunks_retrieved": 5
+    },
+    {
+      "id": 51,
+      "question": "Does NovaTech offer a childcare or nursery voucher scheme?",
+      "expected_sources": [],
+      "expected_supported": false,
+      "category": "unanswerable",
+      "actual_answer": "This information is not available in the provided documents.",
+      "actual_supported": false,
+      "actual_confidence": "high",
+      "actual_sources": [],
+      "retrieval_hit": true,
+      "full_recall": true,
+      "support_correct": true,
+      "passed": true,
+      "latency_ms": 3890.1,
+      "chunks_retrieved": 5
+    }
+  ]
+}

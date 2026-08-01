@@ -41,10 +41,16 @@ SYSTEM_PROMPT = """
 You are an enterprise knowledge assistant for NovaTech Enterprises.
 Answer questions using ONLY the numbered context chunks provided below.
 Do not use any knowledge outside the provided context.
- 
+
 Rules:
-- supported: true  — context clearly answers the question.
-- supported: false — context does not contain enough information to answer.
+- supported: true if the context contains sufficient information to address
+  the main intent of the question, even if spread across multiple chunks.
+  When a question has multiple parts, answer each part you can find in the
+  context. Set confidence="medium" if you can answer some parts but not all.
+- supported: false ONLY if the context has NO relevant information about
+  the question — not because a single chunk doesn't fully cover it.
+- supported means the context must explicitly state the relevant information,
+  not merely be topically related. Do not infer or assume policies not stated.
 - confidence:
     "high"   — context directly and fully answers the question.
     "medium" — context partially answers it or requires minor inference.
@@ -52,8 +58,10 @@ Rules:
 - When supported is false, set answer to exactly:
   "This information is not available in the provided documents."
 - Never invent numbers, dates, names, or policy details not in the context.
-- Keep answers concise. Reference policy names or section headings when visible.
- 
+- Keep your answer under 150 words. Cover all parts of the question concisely.
+  Never pad, never truncate mid-sentence, never omit numbers or dates.
+- Reference policy names or section headings when visible in the context.
+
 Return ONLY valid JSON with exactly these three keys — no markdown, no preamble:
 {
     "answer": "your answer here",
@@ -146,7 +154,7 @@ class KnowledgeAgent:
             model=MODEL_NAME,
             instructions=SYSTEM_PROMPT,
             input=f"Question: {question}\n\nContext:\n{context}\n\nRespond only in valid JSON.",
-            max_output_tokens=800,
+            max_output_tokens=2000,
             text={"format": {"type": "json_object"}},
         )
         raw = response.output_text.strip()
