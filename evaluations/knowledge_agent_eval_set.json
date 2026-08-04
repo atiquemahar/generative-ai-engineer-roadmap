@@ -333,12 +333,13 @@
     "category": "unanswerable"
   },
   {
-    "id": 42,
-    "question": "What are the company's flextime or flexible working hours arrangements?",
-    "expected_answer": "This information is not available in the provided documents.",
-    "expected_sources": [],
-    "expected_supported": false,
-    "category": "unanswerable"
+  "id": 42,
+  "question": "What are the company's flextime or flexible working hours arrangements?",
+  "expected_answer": "The indexed documents do not define a flextime or flexible hours policy directly. HR-LEA-003 (Section 6) references a Flexible Working Policy (HR-FLX-001) for employees requesting flexible or part-time arrangements after parental leave, but that document is not indexed. FIN-EXP-002 confirms NovaTech supports a hybrid work model requiring a signed Remote Work Agreement for remote arrangements of 3 or more days per week.",
+  "expected_sources": ["HR-LEA-003_Parental_Leave_Policy.md", "FIN-EXP-002_Remote_Work_Expense_Guidelines.txt"],
+  "expected_supported": true,
+  "category": "ambiguous",
+  "ambiguity_note": "HR-FLX-001 is referenced but not indexed — system correctly discloses the gap"
   },
   {
     "id": 43,
@@ -389,12 +390,12 @@
     "category": "direct"
   },
   {
-    "id": 49,
-    "question": "Are there post-employment restrictions preventing employees from working for competitors?",
-    "expected_answer": "This information is not available in the provided documents.",
-    "expected_sources": [],
-    "expected_supported": false,
-    "category": "unanswerable"
+  "id": 49,
+  "question": "Are there post-employment restrictions preventing employees from working for competitors?",
+  "expected_answer": "No employee non-compete clause is present in the provided documents. The only post-termination restriction is in VEN-CON-003 (Section 6), which prohibits consultants from soliciting the client's employees for 12 months after termination. This applies to vendor consultants, not NovaTech employees.",
+  "expected_sources": ["VEN-CON-003_Professional_Services_Agreement.pdf"],
+  "expected_supported": true,
+  "category": "direct"
   },
   {
     "id": 50,
@@ -410,5 +411,5 @@
   "expected_sources": [],
   "expected_supported": false,
   "category": "unanswerable"
-}
+  }
 ]
