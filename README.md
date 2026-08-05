@@ -5,7 +5,7 @@ Every day produces working code, measured results, and documented findings.
 No tutorials copied. No demos without numbers.
 
 **GitHub:** github.com/atiquemahar/generative-ai-engineer-roadmap  
-**LinkedIn:** linkedin.com/in/atique-ahmed-927b941a2
+**LinkedIn:** www.linkedin.com/in/atique-ahmed-genai
 
 **Current progress: Day 22 of 80**
 
