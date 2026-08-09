@@ -4,9 +4,6 @@ An 80-day hands-on build log toward enterprise GenAI engineering.
 Every day produces working code, measured results, and documented findings.
 No tutorials copied. No demos without numbers.
 
-**GitHub:** github.com/atiquemahar/generative-ai-engineer-roadmap  
-**LinkedIn:** linkedin.com/in/atique-ahmed-927b941a2
-
 **Current progress: Day 22 of 80**
 
 ---
@@ -121,20 +118,17 @@ on a structured tabular document — documented in `docs/day18_findings.md`.
 Citation safety is guaranteed by architecture: `_build_sources()` reads only from
 retrieval output. The LLM never touches the source list.
 
-
-**Day 22 — Full 5-Metric Evaluation (51 questions)**
+**Day 21 — 51-Question Evaluation**
 
 | Metric | Score | Target |
 |---|---:|---:|
-| Retrieval Hit Rate @5 | 95% | > 70% ✓ |
-| Answer Groundedness (≥ 2/3) | 95% | — |
-| Citation Accuracy | 100% | 100% ✓ |
-| Refusal Accuracy | 100% | > 80% ✓ |
-| Overall Pass Rate | 96% | — |
+| Retrieval hit rate | 93% | > 70% ✓ |
+| Direct questions | 100% | — |
+| Multi-document questions | 80% | — |
+| Ambiguous questions | 80% | — |
+| Refusal accuracy | 90% | > 80% ✓ |
+| Overall pass rate | 92% | — |
 
-Citation accuracy is 100% by architectural design — `_build_sources()` constructs
-citations directly from retrieval results. The LLM never generates source references.
-Source fabrication is structurally impossible.
 ---
 
 ## Repository Structure
@@ -276,15 +270,12 @@ uvicorn projects.knowledge_agent.api.main:app --reload
 
 ---
 
-## What's next (Days 23–80)
+## What's next (Days 22–80)
 
-- Day 23–27: FastAPI hardening, deployment, Project 1 final evaluation and release
-- Days 28–40: LangGraph stateful agents, human-in-the-loop approval workflows
-- Days 41–50: Operations Agent — tool calling, PostgreSQL audit trail, Azure Container Apps
-- Days 51–56: MCP server on Azure Container Apps
-- Days 57–66: Multi-agent workflow (6 agents + orchestrator)
-- Days 67–71: Google ADK comparison vs LangGraph
-- Days 72–80: Portfolio cleanup, AI-103 exam, job applications
+- Day 22: Groundedness judging (LLM-as-judge), 5-metric evaluation report
+- Day 23–30: FastAPI endpoints, streaming responses, error handling
+- Day 31–40: Azure AI Foundry deployment, monitoring
+- Day 41–80: Multi-agent orchestration with LangGraph, CI/CD, enterprise hardening
 
 ---
 
