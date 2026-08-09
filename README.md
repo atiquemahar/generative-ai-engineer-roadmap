@@ -4,6 +4,7 @@ An 80-day hands-on build log toward enterprise GenAI engineering.
 Every day produces working code, measured results, and documented findings.
 No tutorials copied. No demos without numbers.
 
+
 **Current progress: Day 22 of 80**
 
 ---
