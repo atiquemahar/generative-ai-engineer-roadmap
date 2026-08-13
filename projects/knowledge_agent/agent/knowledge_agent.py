@@ -29,46 +29,10 @@ if str(REPO_ROOT) not in sys.path:
 load_dotenv(Path(REPO_ROOT) / ".env")
 
 from projects.knowledge_agent.retrieval.searcher import HybridSearcher
+from projects.knowledge_agent.agent.defensive_prompt import DEFENSIVE_SYSTEM_PROMPT
 
 MODEL_NAME = os.environ["MODEL_DEPLOYMENT_NAME"]
 
-# ── System prompt ─────────────────────────────────────────────────────────────
-# The LLM receives numbered context chunks and must return JSON with exactly
-# three keys: answer, supported, confidence.
-# It is deliberately NOT asked to list sources — that is Python's job.
-
-SYSTEM_PROMPT = """
-You are an enterprise knowledge assistant for NovaTech Enterprises.
-Answer questions using ONLY the numbered context chunks provided below.
-Do not use any knowledge outside the provided context.
-
-Rules:
-- supported: true if the context contains sufficient information to address
-  the main intent of the question, even if spread across multiple chunks.
-  When a question has multiple parts, answer each part you can find in the
-  context. Set confidence="medium" if you can answer some parts but not all.
-- supported: false ONLY if the context has NO relevant information about
-  the question — not because a single chunk doesn't fully cover it.
-- supported means the context must explicitly state the relevant information,
-  not merely be topically related. Do not infer or assume policies not stated.
-- confidence:
-    "high"   — context directly and fully answers the question.
-    "medium" — context partially answers it or requires minor inference.
-    "low"    — context is tangentially related but doesn't clearly answer.
-- When supported is false, set answer to exactly:
-  "This information is not available in the provided documents."
-- Never invent numbers, dates, names, or policy details not in the context.
-- Keep your answer under 150 words. Cover all parts of the question concisely.
-  Never pad, never truncate mid-sentence, never omit numbers or dates.
-- Reference policy names or section headings when visible in the context.
-
-Return ONLY valid JSON with exactly these three keys — no markdown, no preamble:
-{
-    "answer": "your answer here",
-    "supported": true,
-    "confidence": "high"
-}
-""".strip()
 
 # ── KnowledgeAgent ────────────────────────────────────────────────────────────
 
@@ -107,9 +71,14 @@ class KnowledgeAgent:
         collapse into one citation entry using the highest-scoring chunk
         as the representative. Sorted by relevance score descending.
  
+        Threshold filtering applies only to reranker scores (0–4 scale).
+        BM25 and RRF scores are on incomparable scales so no threshold
+        is applied when the reranker was not used.
+ 
         This is the only method that touches 'sources'.
         The LLM never does.
         """ 
+        MIN_RERANKER_SCORE = 2.0
         seen: dict[str, dict] = {}
 
         for chunk in chunks:
@@ -132,7 +101,14 @@ class KnowledgeAgent:
 
         sources = []
         for filename, chunk in seen.items():
+            reranker_score = chunk.get("@search.reranker_score")
             score = chunk.get("@search.reranker_score") or chunk.get("@search.score", 0.0)
+
+            # Only threshold when reranker was used — BM25/RRF scales
+            # are incomparable so a fixed cutoff would be meaningless
+            if reranker_score is not None and float(reranker_score) < MIN_RERANKER_SCORE:
+                continue
+            
             sources.append({
                 "document": filename,
                 "page": chunk.get("page_number", 0),
@@ -152,7 +128,7 @@ class KnowledgeAgent:
     
         response = self.openai_client.responses.create(
             model=MODEL_NAME,
-            instructions=SYSTEM_PROMPT,
+            instructions=DEFENSIVE_SYSTEM_PROMPT,
             input=f"Question: {question}\n\nContext:\n{context}\n\nRespond only in valid JSON.",
             max_output_tokens=2000,
             text={"format": {"type": "json_object"}},

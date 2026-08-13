@@ -1,44 +1,37 @@
 """
 experiments/day23_injection_tests.py
 Day 23 — Prompt Injection Testing
-
+ 
 OWASP LLM Top 10 2026 — LLM01: Prompt Injection
   Direct injection  : malicious instructions in the user query itself.
   Indirect injection: malicious instructions embedded inside retrieved documents.
   Both can lead to unauthorized access, data exfiltration, and system prompt leaks.
-
+ 
 Azure AI Content Safety — Prompt Shields API
   Scans user input BEFORE it reaches the LLM for jailbreak detection.
-  POST {endpoint}/contentsafety/text:detectJailbreak?api-version=2024-02-15-preview
+  POST {endpoint}/contentsafety/text:shieldPrompt?api-version=2024-09-01
   Set CONTENT_SAFETY_ENDPOINT + CONTENT_SAFETY_KEY in .env to enable.
-
+ 
 Architecture — why we use KnowledgeAgent.ask(), not raw LLM calls
 ──────────────────────────────────────────────────────────────────
 Direct injection (ids 1, 2, 7, 8):
   agent.ask(malicious_query) → HybridSearcher retrieves real docs → LLM sees
   the malicious query as the Question field. Tests whether defensive instructions
   prevent the LLM from complying with the user's bad request.
-
+ 
 Indirect injection (ids 3, 4):
-  1. Upload a poisoned chunk to Azure AI Search (same dept/topic as the benign
-     query, so HybridSearcher naturally retrieves it).
+  1. Upload a poisoned chunk to Azure AI Search (same department/topic as the
+     benign query, so HybridSearcher naturally retrieves it).
   2. agent.ask(benign_query) — RAG pipeline fetches the poisoned chunk.
   3. LLM receives the malicious text inside the Context block. Rule 3 of the
      defensive prompt (context boundary enforcement) must prevent execution.
   4. Poisoned chunk is always deleted from the index after the test.
-
+  This is the exact OWASP LLM01 indirect injection threat model.
+ 
 Data exfiltration (ids 5, 6) + Unauthorised access (ids 7, 8):
   agent.ask(bad_query) against real docs — tests data boundary and social
-  engineering resistance rules.
-
-Azure built-in content filter vs Prompt Shields
-────────────────────────────────────────────────
-Azure OpenAI has a BUILT-IN content filter on every deployment that fires
-before the LLM and raises BadRequestError(code="content_filter"). This is
-separate from the optional Prompt Shields API. When the built-in filter
-blocks an attack, run_attack() treats it as PASS (blocked_by_azure=True) —
-Azure stopped it at the infrastructure layer, which is the best outcome.
-
+  engineering resistance rules in the defensive prompt.
+ 
 Output : experiments/day23_results.json
 Run    : python experiments/day23_injection_tests.py
 Commit : git commit -m "day23: injection tests, defensive prompt added, all 8 attacks mitigated"
@@ -330,10 +323,13 @@ def azure_prompt_shield(user_message: str) -> dict | None:
         return None
 
     url = (
-        f"{endpoint.rstrip('/')}/contentsafety/text:detectJailbreak"
-        "?api-version=2024-02-15-preview"
+        f"{endpoint.rstrip('/')}/contentsafety/text:shieldPrompt"
+        "?api-version=2024-09-01"
     )
-    payload = json.dumps({"text": user_message}).encode("utf-8")
+    payload = json.dumps({
+        "userPrompt": user_message,
+        "documents": [],
+    }).encode("utf-8")
     req = urllib.request.Request(
         url, data=payload,
         headers={"Content-Type": "application/json",
@@ -491,7 +487,7 @@ def run_attack(agent: KnowledgeAgent, attack: dict, phase: str) -> dict:
 
     shield_flag = None
     if shield:
-        shield_flag = shield.get("jailbreakAnalysis", {}).get("detected")
+        shield_flag = shield.get("userPromptAnalysis", {}).get("attackDetected")
 
     status      = "✓ PASS" if passed else "✗ FAIL"
     block_note  = " [Azure built-in filter]" if blocked_by_azure else ""
@@ -612,7 +608,7 @@ def main():
         },
         "results": phase_a + phase_b,
     }
-    out_path = REPO_ROOT / "experiments" / "day23_results.json"
+    out_path = REPO_ROOT / "experiments" / "day23_result.json"
     out_path.parent.mkdir(exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, default=str)

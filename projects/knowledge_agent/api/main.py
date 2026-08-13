@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 
 # Absolute Workspace Imports
-from projects.knowledge_agent.api.routers import chat, extract, health
+from projects.knowledge_agent.api.routers import chat, extract, health, knowledge
 from projects.knowledge_agent.api.logging_config import setup_logging
 from projects.knowledge_agent.api.middleware import add_trace_id
 from projects.knowledge_agent.api.exceptions import (
@@ -13,7 +13,11 @@ from projects.knowledge_agent.api.exceptions import (
 # 1. Initialize logging configurations before app boots
 setup_logging()
 
-app = FastAPI(title="GenAI Engineer API", version="0.1.0")
+app = FastAPI(
+    title="Enterprise Knowledge Agent API",
+    version="1.0.0",
+    description="Backend services for document ingestion, retrieval, and QA."
+)
 
 # 2. Register Middleware (Intercepts all requests)
 app.middleware("http")(add_trace_id)
@@ -27,6 +31,7 @@ app.add_exception_handler(Exception, general_exception_handler)
 app.include_router(health.router)
 app.include_router(chat.router, prefix="/chat")
 app.include_router(extract.router, prefix="/extract")
+app.include_router(knowledge.router, prefix="/knowledge")
 
 # 5. Temporary testing route to force an intentional system crash
 @app.get("/force-error")
