@@ -42,12 +42,11 @@ if prompt := st.chat_input("Ask a question about internal documentation..."):
         st.write(answer)
 
         # 1. Display Confidence Visual Badge
-        if confidence == "high":
-            st.caption("🟢 **Confidence:** High")
-        elif confidence == "medium":
-            st.caption("🟡 **Confidence:** Medium")
-        else:
-            st.caption("🔴 **Confidence:** Low / Unverified")
+        if confidence and data.get("sources"):  # only show confidence when there's an answer
+            confidence_color = {"high": "🟢", "medium": "🟡", "low": "🔴"}.get(
+                confidence.lower(), "⚪"
+            )
+            st.caption(f"{confidence_color} Confidence: {confidence.capitalize()}")
 
         if sources:
             with st.expander("Cited Sources"):
@@ -57,7 +56,7 @@ if prompt := st.chat_input("Ask a question about internal documentation..."):
                     st.markdown(f"**{idx}. {src.get('document')}** ({page_display})")
                     section = src.get('section', '')
                     section_display = f"Section: {section} | " if section and section not in ['', 'Novatech Enterprises'] else ""
-                    st.caption(f"{section_display}Relevance: {src.get('relevance_score', 0):.2f}")
+                    st.caption(f"{section_display}Relevance: {src.get('relevance_score', 0):.2f}/4")
            
 
     st.session_state.messages.append({"role": "assistant", "content": answer})              
