@@ -9,7 +9,7 @@ A production-pattern RAG system built on Azure AI Search and Azure OpenAI. It an
 
 ## Demo
 
-[![Watch the demo](https://cdn.loom.com/sessions/thumbnails/f74ed54460e441ccbad20537e366b53a-with-play.gif)](https://www.loom.com/share/f74ed54460e441ccbad20537e366b53a)
+**[▶ Watch the demo — Enterprise Knowledge Agent](https://www.loom.com/share/f74ed54460e441ccbad20537e366b53a)**
 
 ---
 
