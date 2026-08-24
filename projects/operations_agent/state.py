@@ -12,6 +12,7 @@ class AgentState(TypedDict):
     # Customer context (set once, never overwritten)
     customer_id: Optional[str]
     customer_name: Optional[str]
+    product_id: Optional[str]
 
     # Active task context
     order_id: Optional[str]
@@ -21,6 +22,7 @@ class AgentState(TypedDict):
     order_data: Optional[dict]
     shipment_data: Optional[dict]
     policy_evidence: Optional[dict]
+    
 
     # Decision tracking
     proposed_action: Optional[str]
