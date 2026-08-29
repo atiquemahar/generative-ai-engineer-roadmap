@@ -22,7 +22,7 @@ class CustomerInput(BaseModel):
     customer_id: str = Field(description="Customer ID starting with C, e.g. C001")
 
 class OrderInput(BaseModel):
-    order_id: str = Field("Order ID starting with O, e.g. O001")
+    order_id: str = Field(description="Order ID starting with O, e.g. O001")
 
 class InventoryInput(BaseModel):
     product_id: str = Field(description="Product ID starting with P, e.g. P001")
@@ -57,7 +57,7 @@ def get_customer_db(customer_id: str) -> dict:
         }
         _log(session, "lookup", "get_customer_db",
              {"customer_id": customer_id}, result, customer_id)
-        session.commit
+        session.commit()
         return result
 
 @tool("get_order_db", args_schema=OrderInput)
