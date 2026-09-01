@@ -61,7 +61,8 @@ class Inventory(Base):
 class AuditLog(Base):
     __tablename__ = "audit_logs" 
 
-    id:             Mapped[int]               = mapped_column(primary_key=True) 
+    id:             Mapped[int]               = mapped_column(primary_key=True)
+    action_id:      Mapped[Optional[str]]     = mapped_column(String, unique=True, nullable=True)  # ← idempotency key
     session_id:     Mapped[Optional[str]]     = mapped_column(String) 
     customer_id:    Mapped[Optional[str]]     = mapped_column(String)
     action:         Mapped[Optional[str]]     = mapped_column(String)
@@ -72,6 +73,6 @@ class AuditLog(Base):
     timestamp:      Mapped[datetime]          = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc)) 
 
     def __repr__(self) -> str:
-        return f"AuditLog(id={self.id!r}, action={self.action!r}, tool={self.tool_name!r})"       
+        return f"AuditLog(id={self.id!r}, action_id={self.action_id!r}, action={self.action!r})"      
 
 

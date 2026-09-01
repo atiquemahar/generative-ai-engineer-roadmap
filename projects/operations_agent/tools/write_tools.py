@@ -23,7 +23,9 @@ class CreateTicketInput(BaseModel):
     issue: str = Field(description="Description of the issue")
     priority: str = Field(description="Priority: low, medium, high")
 
-# ── Write tools ───────────────────────────────────────────────────────────
+# ── Write tools — business logic only ─────────────────────────────────────
+# AuditLog writing and idempotency are handled by write_guard in agent_graph.py.
+# These tools do one thing: validate inputs and return a result dict.
 
 @tool("issue_refund", args_schema=IssueRefundInput)
 def issue_refund(order_id: str, amount: float, reason: str) -> dict:
@@ -35,22 +37,12 @@ def issue_refund(order_id: str, amount: float, reason: str) -> dict:
     if amount <= 0:
         raise ValueError("Refund amount must be positive.")
 
-    result = {
+    return  {
         "order_id": order_id,
         "amount_usd": amount,
         "reason": reason,
         "status": "refund_issued",
     }
-
-    with SessionLocal() as session:
-        session.add(AuditLog(
-            action="refund_issued",
-            tool_name="issue_refund",
-            tool_input={"order_id": order_id, "amount": amount, "reason": reason},
-            tool_output=result,
-        ))
-        session.commit()
-    return result
 
 @tool("create_support_ticket", args_schema=CreateTicketInput)
 def create_support_ticket(customer_id: str, issue: str, priority: str) -> dict:
@@ -63,21 +55,10 @@ def create_support_ticket(customer_id: str, issue: str, priority: str) -> dict:
         raise ValueError(f"Priority must be one of {valid_priorities}. Got: '{priority}")
 
     ticket_id = f"TK-{customer_id}-001"
-    result = {
+    return {
         "ticket_id": ticket_id,
         "customer_id": customer_id,
         "issue": issue,
         "priority": priority,
         "status": "ticket_created",
     }
-
-    with SessionLocal() as session:
-        session.add(AuditLog(
-            action="ticket_created",
-            tool_name="create_support_ticket",
-            tool_input={"customer_id": customer_id, "issue": issue, "priority": priority},
-            tool_output=result,
-        ))
-        session.commit()
-    return result
-    

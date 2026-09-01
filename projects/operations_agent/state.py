@@ -30,6 +30,9 @@ class AgentState(TypedDict):
     approval_status: Optional[str] # pending/approved/rejected
     action_executed: Optional[bool]
 
+    # Idempotency — generated in approval_node, consumed and cleared in write_guard
+    action_id: Optional[str]
+
     # Audit — reducers accumulate across nodes
     tool_calls_made: Annotated[list[str], add]
     errors: Annotated[list[str], add]

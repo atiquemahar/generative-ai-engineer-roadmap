@@ -10,7 +10,8 @@ if str(REPO_ROOT) not in sys.path:
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
-
+from sqlalchemy.exc import OperationalError
+from projects.operations_agent.errors.handlers import handle_db_error
 from projects.operations_agent.database.engine import SessionLocal
 from projects.operations_agent.database.models import (
     Customer, Order, Shipment, Inventory, AuditLog
@@ -44,89 +45,101 @@ def _log(session: Session, action: str, tool_name: str,
 @tool("get_customer_db", args_schema=CustomerInput)
 def get_customer_db(customer_id: str) -> dict:
     """Retrieve customer information from database by ID."""
-    with SessionLocal() as session:
-        customer = session.get(Customer, customer_id)
-        if not customer:
-            raise ValueError(f"Customer '{customer_id}' not found.")
-        result = {
-            "id": customer.id,
-            "name": customer.name,
-            "email": customer.email,
-            "tier": customer.tier,
-            "status": customer.status,
-        }
-        _log(session, "lookup", "get_customer_db",
-             {"customer_id": customer_id}, result, customer_id)
-        session.commit()
-        return result
+    try:
+        with SessionLocal() as session:
+            customer = session.get(Customer, customer_id)
+            if not customer:
+                raise ValueError(f"Customer '{customer_id}' not found.")
+            result = {
+                "id": customer.id,
+                "name": customer.name,
+                "email": customer.email,
+                "tier": customer.tier,
+                "status": customer.status,
+            }
+            _log(session, "lookup", "get_customer_db",
+                {"customer_id": customer_id}, result, customer_id)
+            session.commit()
+            return result
+    except Exception as e:
+        return handle_db_error(e, "get_customer_db")    
 
 @tool("get_order_db", args_schema=OrderInput)
 def get_order_db(order_id: str) -> dict:
     """Retrieve order details from database by order ID."""
-    with SessionLocal() as session:
-        order = session.get(Order, order_id)
-        if not order:
-            raise ValueError(f"Order '{order_id}' not found.")
-        result = {
-            "id": order.id,
-            "customer_id": order.customer_id,
-            "product_id": order.product_id,
-            "quantity": order.quantity,
-            "status": order.status,
-            "total_usd": order.total_usd,
-        }
-        _log(session, "lookup", "get_order_db",
-             {"order_id": order_id}, result)
-        session.commit()
-        return result
+    try:
+        with SessionLocal() as session:
+            order = session.get(Order, order_id)
+            if not order:
+                raise ValueError(f"Order '{order_id}' not found.")
+            result = {
+                "id": order.id,
+                "customer_id": order.customer_id,
+                "product_id": order.product_id,
+                "quantity": order.quantity,
+                "status": order.status,
+                "total_usd": order.total_usd,
+            }
+            _log(session, "lookup", "get_order_db",
+                {"order_id": order_id}, result)
+            session.commit()
+            return result
+    except Exception as e:
+        return handle_db_error(e, "get_order_db")    
 
 @tool("get_shipment_db", args_schema=OrderInput)
 def get_shipment_db(order_id: str) -> dict:
     """Retrieve shipment tracking information for an order from database."""
-    with SessionLocal() as session:
-        # Check order exists
-        order = session.get(Order, order_id) 
-        if not order:
-            raise ValueError(f"Order '{order_id}' not found.")
+    try:
+        with SessionLocal() as session:
+            # Check order exists
+            order = session.get(Order, order_id) 
+            if not order:
+                raise ValueError(f"Order '{order_id}' not found.")
 
-        # Find shipment for this order
-        shipment = session.query(Shipment).filter(
-            Shipment.order_id == order_id
-        ).first()
+            # Find shipment for this order
+            shipment = session.query(Shipment).filter(
+                Shipment.order_id == order_id
+            ).first()
 
-        if not shipment:
-            raise ValueError(
-                f"No shipment record for order '{order_id}' — order may still be processing."
-            )
-        result = {
-            "order_id": shipment.order_id,
-            "carrier": shipment.carrier,
-            "tracking_number": shipment.tracking_number,
-            "status": shipment.status,
-            "estimated_delivery": shipment.estimated_delivery,
-        } 
-        _log(session, "lookup", "get_shipment_db",
-             {"order_id": order_id}, result)
-        session.commit()
-        return result   
+            if not shipment:
+                raise ValueError(
+                    f"No shipment record for order '{order_id}' — order may still be processing."
+                )
+            result = {
+                "order_id": shipment.order_id,
+                "carrier": shipment.carrier,
+                "tracking_number": shipment.tracking_number,
+                "status": shipment.status,
+                "estimated_delivery": shipment.estimated_delivery,
+            } 
+            _log(session, "lookup", "get_shipment_db",
+                {"order_id": order_id}, result)
+            session.commit()
+            return result 
+    except Exception as e:
+        return handle_db_error(e, "get_shipment_db")      
 
 @tool("check_inventory_db", args_schema=InventoryInput)
 def check_inventory_db(product_id: str):
     """Check inventory level for a product from database."""
-    with SessionLocal() as session:
-        item = session.get(Inventory, product_id)
-        if not item:
-            raise ValueError(f"Product '{product_id}' not found.")
-        result = {
-            "product_id": item.product_id,
-            "product_name": item.product_name,
-            "stock":        item.stock,
-            "warehouse":    item.warehouse,
-        } 
-        _log(session, "lookup", "check_inventory_db",
-             {"product_id": product_id}, result) 
-        session.commit()
-        return result
+    try:
+        with SessionLocal() as session:
+            item = session.get(Inventory, product_id)
+            if not item:
+                raise ValueError(f"Product '{product_id}' not found.")
+            result = {
+                "product_id": item.product_id,
+                "product_name": item.product_name,
+                "stock":        item.stock,
+                "warehouse":    item.warehouse,
+            } 
+            _log(session, "lookup", "check_inventory_db",
+                {"product_id": product_id}, result) 
+            session.commit()
+            return result
+    except Exception as e:
+        return handle_db_error(e, "check_inventory_db")    
 
 @tool
 def get_refund_policy_db() -> str:
