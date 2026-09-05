@@ -1,5 +1,5 @@
 # projects/operations_agent/tools/write_tools.py
-import sys
+import sys, os
 from pathlib import Path
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
@@ -37,12 +37,18 @@ def issue_refund(order_id: str, amount: float, reason: str) -> dict:
     if amount <= 0:
         raise ValueError("Refund amount must be positive.")
 
-    return  {
-        "order_id": order_id,
+    # Controlled failure injection for evaluation only
+    if os.getenv("OPERATIONS_AGENT_EVAL_FAIL_REFUND") == "1":
+        raise RuntimeError("Simulated payment-provider failure for evaluation.")
+
+    result = {
+        "order_id":   order_id,
         "amount_usd": amount,
-        "reason": reason,
-        "status": "refund_issued",
+        "reason":     reason,
+        "status":     "refund_issued",
     }
+
+    return result
 
 @tool("create_support_ticket", args_schema=CreateTicketInput)
 def create_support_ticket(customer_id: str, issue: str, priority: str) -> dict:

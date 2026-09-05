@@ -37,3 +37,8 @@ class AgentState(TypedDict):
     tool_calls_made: Annotated[list[str], add]
     errors: Annotated[list[str], add]
 
+    intent: Optional[str]
+    required_fields: list[str]
+    provided_fields: dict
+    needs_clarification: Optional[bool]
+

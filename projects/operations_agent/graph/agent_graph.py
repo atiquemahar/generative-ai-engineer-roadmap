@@ -20,6 +20,11 @@ if str(REPO_ROOT) not in sys.path:
 from projects.operations_agent.state import AgentState
 from projects.operations_agent.database.engine import SessionLocal
 from projects.operations_agent.database.models import AuditLog
+from projects.operations_agent.graph.request_validator import (
+    request_validator,
+    clarification_node,
+    route_after_validation
+)
 from projects.operations_agent.tools.db_tools import (
     get_customer_db, 
     get_order_db, 
@@ -63,6 +68,12 @@ SYSTEM_PROMPT = (
     "You are a customer operations assistant. "
     "Use tools to look up customer, order, shipment, and inventory data. "
     "Never guess IDs or details — always retrieve first. "
+    "Use get_order_db for order-status or delivery-status questions. "
+    "Perform only the tool calls needed for the user's requested action; do not "
+    "perform unrelated lookups or create additional actions. "
+    "IMPORTANT: If the user's message does not include a specific order ID, "
+    "customer ID, or product ID required to complete the request, ask for it "
+    "before calling any tool. Do not attempt lookups with assumed IDs. "
     "For refunds and support tickets, call the appropriate write tool. "
     "The system will handle human approval before the action executes. "
     "If an action is rejected, acknowledge it and ask how else you can help."
@@ -136,7 +147,7 @@ def approval_node(state: AgentState) -> Command[Literal["write_guard", "agent_no
         goto="agent_node"
     )
 
-def write_guard(state: AgentState) -> dict:
+def write_guard(state: AgentState) -> Command[Literal["agent_node"]]:
     """
     Production-grade write gate. Three responsibilities:
       1. Idempotency check — action_id must not already exist in audit_logs.
@@ -239,8 +250,12 @@ builder.add_node(
     read_tool_node,
     retry_policy=RetryPolicy(max_attempts=2, initial_interval=0.5),
 )
+builder.add_node("request_validator", request_validator)
+builder.add_node("clarification_node", clarification_node)
 
-builder.add_edge(START, "agent_node")
+builder.add_edge(START, "request_validator")
+builder.add_conditional_edges("request_validator", route_after_validation)
+builder.add_edge("clarification_node", END)
 builder.add_conditional_edges("agent_node", route_from_agent)
 builder.add_edge("read_tools", "agent_node")
 builder.add_edge("write_guard", "agent_node")
